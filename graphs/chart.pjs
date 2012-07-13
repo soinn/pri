@@ -1,0 +1,292 @@
+
+
+//*************************//
+//     Global variables    //
+//*************************//
+
+//*************//
+//   General   //
+//*************//
+
+//canvas size
+int size_x = 560;
+int size_y = 350;
+
+int frame_rate = 600;
+
+//background color
+int background_r = 0;
+int background_g = 0;
+int background_b = 0;
+
+
+//*************//
+//   Before    //
+//*************//
+
+float rec_x = 150;
+float rec_y = 50;
+float alpha = 100;
+
+//Launching animation
+boolean start = false;
+boolean first = true;
+
+//*************//
+// Chart Info  //
+//*************//
+
+int nb_values; //number of points
+int nb_y = 6; //number of line we want to show for for Y
+int reference_color = 100; //alpha for white lines
+int marge = 20; // marge around the chart
+ArrayList  values; //the collection of points
+
+//Line
+int cur_x = marge;
+int cur_y = size_y - marge;
+float add = 0.3;
+
+
+
+
+
+
+//*************************//
+//        Functions        //
+//*************************//
+
+
+
+
+
+// Setup of the animation
+void setup(){
+        size( size_x, size_y );
+        frameRate( frame_rate );
+        colorMode(RGB);
+        
+        values = new ArrayList();
+        
+        PFont fontA = loadFont("helvetica");
+        textFont(fontA, 14);
+		
+}
+
+// Main draw loop
+void draw(){
+        
+        //We show the chart
+        //this happen when user click on canvas
+        if(start){
+                
+                //But before showing the animate chart
+                //we get values and draw a grid
+                if(first){
+                        first = false;
+                        background(background_r, background_g, background_b);
+                        
+                        int min_y = 9999999;
+                        int max_y = 0;
+                        
+                        //get number of values from the DOM
+                        nb_values = (int)getNbInput(); //from our javascript function
+                        
+                        //We create each point and find the min Y and max Y
+                        for(int i = 0; i < nb_values; i++){
+                                int val = (int)getValAtIndex(i);
+                                values.add(new PChart((String)getNameAtIndex(i), val));
+                                
+                                if(val > max_y){
+                                        max_y = val;
+                                }
+                                if(val < min_y){
+                                        min_y = val;
+                                }     
+                        }
+                        
+                        //Make repere here
+                        stroke(250, 239, 87); //Yellow
+                        strokeWeight(2);
+                        line(marge, size_y-marge, size_x-marge, size_y-marge); //X line
+                        line(marge, marge, marge, size_y-marge); //Y line
+                        
+                        //Grid setup
+                        stroke(255, 255, 255, reference_color);
+                        strokeWeight(1);
+                        textSize(8);
+                        
+                        //Vertical lines
+                        float interline = (size_x-(2*marge))/nb_values;
+                        for(int i = 0; i < nb_values; i++){
+                                float pos = marge + ((i+1)*interline);
+                                
+                                //The line
+                                line((int)pos, marge, (int)pos, size_y-marge);
+                                
+                                //The caption
+                                textAlign(CENTER);
+                                text(values.get(i).getX(),pos-(interline/2), size_y-15, interline, 15);
+                                
+                                values.get(i).setDrawX(pos);
+                        }
+                        
+                        //Horizontal lines
+                        stroke(255, 255, 255, reference_color-40);
+                        float maximum_line = 999999;
+                        float intervalue = (max_y - min_y) / (nb_y-1);
+                        for(int i = 0; i < nb_y; i++){
+                                float pos = (size_y - marge) - (i*(size_y / nb_y));
+                                
+                                //The line
+                                line(marge, (int)pos, size_x-marge, pos);
+                                
+                                //The caption
+                                text((String)(min_y + (i*intervalue)),1, (int)pos-7, marge-1, 15);
+                                
+                                if(pos < maximum_line){
+                                        maximum_line = pos;
+                                }
+                        }
+                        
+                        //get Y position for each point
+                        float value_to_px = (size_y - marge - maximum_line )/(max_y - min_y);
+                        for(int i = 0; i < nb_values; i++){
+                                values.get(i).setDrawY((size_y) - (values.get(i).getY()*value_to_px));
+                        }
+                        
+                        cur_x = values.get(0).getDrawX();
+                        cur_y = values.get(0).getDrawY();
+                        
+                }else
+				{ //Ok now we can start to draw the line
+                        
+                        //Line style
+                        stroke(230, 112, 12); //Orange
+                        strokeWeight(2);
+                        
+                        //Where we go from where we are ?
+                        int i = 0;
+                        boolean ok = false;
+                        PChart current;
+                        while(i < nb_values && ok == false){
+                                if(cur_x < values.get(i).getDrawX()){
+                                        current = values.get(i); //We go here
+                                        ok = true;
+                                }
+                                i++;
+                        }  
+                        
+                        if(ok == true)
+						{
+                                //From here if we start to draw the line
+                                int start_x = marge;
+                                int start_y = size_y-marge;
+                                
+                                //Or from here
+                                if(i > 1)
+								{
+                                        start_x = values.get(i-2).getDrawX();
+                                        start_y = values.get(i-2).getDrawY();
+                                }
+
+                                float stop_x = current.getDrawX();
+                                float stop_y = current.getDrawY();
+
+                                float a = (stop_y - start_y)/(stop_x - start_x);
+                                float b = start_y - (a*start_x);
+                                
+                                //We draw here our piece of line
+                                //the lenght on X of this piece of line
+                                //is determined by the add var
+                                line(cur_x, cur_y, cur_x+add, (a*(cur_x+add))+b);
+                                
+                                cur_x = cur_x+add;
+                                cur_y = (a*(cur_x+add))+b;
+                        }else
+						{
+                                noLoop();
+                        }         
+                }
+        }else
+		{ //Start screen
+                background(background_r, background_g, background_b);
+                
+                //Draw button to start animation
+                alpha = alpha + (sin(frameCount / 4)*10);
+                //rectangle
+                fill(0,0,0,alpha);
+                noStroke();
+                rect((width/2)-(rec_x/2), (height/2)-(rec_y/2), rec_x, rec_y);
+                
+                //Text
+                textSize(14);
+                fill(255,255,255);
+                textAlign(CENTER);
+                text("Start Graph",(width/2)-75, (height/2)-7, rec_x, 14);  
+        }                
+}
+
+//Launch Graph drawing
+//when user click on canvas
+void mousePressed() 
+{
+  if (mouseButton == LEFT) 
+  {
+          if(start)
+		  {
+                  start = false;
+                  first = true;
+                  values.clear();
+                  cur_x = marge;
+                  cur_y = size_y - marge;
+                  loop();
+          }else{
+                  start = true;
+          }
+  }
+}
+
+//Our Point class
+class PChart 
+{
+        String x;
+        int y;
+        
+        float draw_x;
+        float draw_y;
+        
+        PChart(String name, int val)
+		{
+                x = name;
+                y = val;
+        }
+        
+        String getX()
+		{
+                return x;
+        }
+        
+        int getY()
+		{
+                return y;
+        }
+        
+        void setDrawX(float x)
+		{
+                draw_x = x;
+        }
+        
+        void setDrawY(float y)
+		{
+                draw_y = y;
+        }
+        
+        float getDrawX(){
+                return draw_x;
+        }
+        
+        float getDrawY(){
+                return draw_y;
+        }
+}

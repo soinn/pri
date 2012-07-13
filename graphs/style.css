@@ -1,0 +1,47 @@
+body {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica;
+}
+
+.wrapper {
+        width: 600px;
+        background-color: #f2f2f2;
+        margin: 20px auto 30px auto;
+        
+        -webkit-box-shadow:     0px 4px 3px rgba(0,0,0,0.4),
+                                0px 8px 13px rgba(0,0,0,0.1),
+                                0px 18px 23px rgba(0,0,0,0.1),
+                                0px -10px 12px rgba(0,0,0,0.03);
+
+        -moz-box-shadow:        0px 4px 3px rgba(0,0,0,0.4),
+                                0px 8px 13px rgba(0,0,0,0.1),
+                                0px 18px 23px rgba(0,0,0,0.1),
+                                0px -10px 12px rgba(0,0,0,0.03);
+
+        box-shadow:             0px 4px 3px rgba(0,0,0,0.4),
+                                0px 8px 13px rgba(0,0,0,0.1),
+                                0px 18px 23px rgba(0,0,0,0.1),
+                                0px -10px 12px rgba(0,0,0,0.03);
+}
+
+h1 {
+        font-family: 'Lobster Two';
+        font-size: 30px;
+        color: black;
+        text-shadow: 1px 1px 0px white;
+        width: 100%;
+        text-align: center;
+}
+
+canvas {
+        margin: 20px 0 30px 20px;
+        outline: none;
+}
+
+table{
+        width: 290px;
+        margin-left: 5px;
+        margin-right: 5px;
+        float: left;
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TempsHID</title>
+<meta charset="utf-8" />
+<title>Project Research & Innovation</title>
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two&v1' rel='stylesheet' type='text/css'/>
+	<link href='style.css' rel='stylesheet' type='text/css'/>
+	<script language="javascript" src="processing-1.2.1.js" type="text/javascript"></script>
+	<script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript">
+function getNbInput()
+{
+return $('tr').length;
+}
+
+function getNameAtIndex(i)
+{
+var elem = $('tr').get(i);return $('td:first-child', elem).text();
+}
+
+function getValAtIndex(i)
+{
+var elem = $('tr').get(i);return $('input', elem).val();
+}
+
+$(function()
+{
+$('canvas').click(function(){$('input').attr("disabled", true);
+});
+});
+
+</script>
+</head>
+<body>
+
+<table>
+<tr>
+<td>Time</td>
+<td><input name="NO" id="NO" value="Temp"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:19 PM</td>
+<td><input name="1" id="1" value="28.31"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:24 PM</td>
+<td><input name="2" id="2" value="28.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:29 PM</td>
+<td><input name="3" id="3" value="30.13"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:34 PM</td>
+<td><input name="4" id="4" value="30.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:39 PM</td>
+<td><input name="5" id="5" value="31.50"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:44 PM</td>
+<td><input name="6" id="6" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:49 PM</td>
+<td><input name="7" id="7" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:54 PM</td>
+<td><input name="8" id="8" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:08:59 PM</td>
+<td><input name="9" id="9" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:04 PM</td>
+<td><input name="10" id="10" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:09 PM</td>
+<td><input name="11" id="11" value="32.38"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:14 PM</td>
+<td><input name="12" id="12" value="32.69"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:19 PM</td>
+<td><input name="13" id="13" value="32.81"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:24 PM</td>
+<td><input name="14" id="14" value="33.00"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:29 PM</td>
+<td><input name="15" id="15" value="33.19"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:34 PM</td>
+<td><input name="16" id="16" value="33.25"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:39 PM</td>
+<td><input name="17" id="17" value="33.31"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:44 PM</td>
+<td><input name="18" id="18" value="33.44"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:49 PM</td>
+<td><input name="19" id="19" value="33.50"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:54 PM</td>
+<td><input name="20" id="20" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:09:59 PM</td>
+<td><input name="21" id="21" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:04 PM</td>
+<td><input name="22" id="22" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:09 PM</td>
+<td><input name="23" id="23" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:14 PM</td>
+<td><input name="24" id="24" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:19 PM</td>
+<td><input name="25" id="25" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:24 PM</td>
+<td><input name="26" id="26" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:29 PM</td>
+<td><input name="27" id="27" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:34 PM</td>
+<td><input name="28" id="28" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:39 PM</td>
+<td><input name="29" id="29" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:44 PM</td>
+<td><input name="30" id="30" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:49 PM</td>
+<td><input name="31" id="31" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:54 PM</td>
+<td><input name="32" id="32" value="33.56"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:10:59 PM</td>
+<td><input name="33" id="33" value="33.31"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:04 PM</td>
+<td><input name="34" id="34" value="32.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:09 PM</td>
+<td><input name="35" id="35" value="32.63"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:14 PM</td>
+<td><input name="36" id="36" value="32.31"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:19 PM</td>
+<td><input name="37" id="37" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:24 PM</td>
+<td><input name="38" id="38" value="31.88"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:29 PM</td>
+<td><input name="39" id="39" value="31.75"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:34 PM</td>
+<td><input name="40" id="40" value="31.50"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:39 PM</td>
+<td><input name="41" id="41" value="31.25"/></td>
+</tr>
+
+<tr>
+<td>7/6/2012 2:11:44 PM</td>
+<td><input name="42" id="42" value="31.13"/></td>
+</tr>
+
+</table>
+
+
+<canvas id="demo_graph" data-processing-sources="chart.pjs"></canvas>
+<div style="clear: both"></div>
+</body>
+</html>
+
