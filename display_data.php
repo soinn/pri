@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
+		<script language="javascript" type="text/javascript" src="graph/txt_to_html_weight.js"></script>
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -76,7 +77,12 @@
                 <aside>
 				<h1>Graphs</h1>
 				<?php echo "<p><a href='lol.php?login=".$login." '>Temperature</a></p>"; ?>
-				<?php echo "<p><a href='graphs/graph_weight.php?login=".$login." '>Weight</a></p>"; ?>
+
+				<?php echo "<p><a href='graph/graph_weight.php?login=".$login." '>Weight</a></p>"; ?>
+				
+				
+				<a onclick="javascript: txt_to_html_weight(); return false;" href="graph/graph_weight.php?login=adrien">Catégorie principale</a>
+				
 				<?php echo "<p><a href='lol.php?login=".$login." '>Cardiac Frequence</a></p>"; ?>
 				<?php echo "<p><a href='lol.php?login=".$login." '>VMA/Week</a></p>"; ?>
 				<?php echo "<p><a href='lol.php?login=".$login." '>Kilometers/Week</a></p>"; ?>
