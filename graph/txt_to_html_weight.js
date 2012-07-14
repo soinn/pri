@@ -1,6 +1,4 @@
 
-function txt_to_html_weight()
-{
 	var src  = "arnaud_weight.txt";
 	var dest = "graph_weight.php";
 
@@ -46,9 +44,7 @@ function txt_to_html_weight()
 	fout.WriteLine( htmlFooter() );
 	fin.Close();
 	fout.Close();
-	
-	alert("FFFUUUU");
-}
+
  
 
 /*******************************

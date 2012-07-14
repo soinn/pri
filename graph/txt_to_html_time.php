@@ -1,12 +1,12 @@
 <html>
 <?php $login = $_GET['login']; ?>
-<?php echo "<META http-equiv='refresh' content='2;URL=graph_weight.php?login=".$login."'>";?>
+<?php echo "<META http-equiv='refresh' content='2;URL=graph_time.php?login=".$login."'>";?>
 <p>Génération du graphe</p>
 <?php 
 
-unlink ("graph_weight.php");
+unlink ("graph_time.php");
 
-$fp = fopen("graph_weight.php","w+");
+$fp = fopen("graph_time.php","w+");
 
 fputs($fp, "<!DOCTYPE html>\r\n<html>\r\n<head>\n");
 fputs($fp, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<link rel=\"stylesheet\" href=\"../style.css\" />\n");
@@ -34,10 +34,10 @@ fputs($fp, "<article>\n");
 fputs($fp, "<?php\n");
 fputs($fp, "\$login = \$_GET['login'];\n");
 fputs($fp, "?>\n");
-fputs($fp, "<h1>Weight Graph</h1></br>\n");
+fputs($fp, "<h1>Time Graph</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
-fputs($fp, "</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>\n");
-fputs($fp, "</br><p>This is time in x-axis and kilograms in y-axis.</p>\n");
+fputs($fp, "</br><p>This the graph of your time, each point match with one of your training and the weight you recorded during this training.</p>\n");
+fputs($fp, "</br><p>This is time in x-axis and minutes in y-axis.</p>\n");
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
 fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"clickdata\"></span></p>\n");
 fputs($fp, "\n");
@@ -82,7 +82,7 @@ fputs($fp, "weight2[i][0] = mois + (jour / 30);}\n");
 
 
 fputs($fp, "var plot = $.plot($(\"#placeholder\"),\n");
-fputs($fp, "[ { data: weight2, label: \"weight\"}], {\n");
+fputs($fp, "[ { data: weight2, label: \"minutes\"}], {\n");
 fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");

@@ -64,32 +64,32 @@
 					
 					$filename = "user/".$login."_weight.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$weight.",".$mm."/".$jj);
+					fputs($fp, "1,".$weight.",".$jj.$mm);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_frequence.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$frequence.",".$mm."/".$jj);
+					fputs($fp, "1,".$frequence.",".$jj.$mm);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_duration.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$time.",".$mm."/".$jj);
+					fputs($fp, "1,".$time.",".$jj.$mm);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_distance.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$distance.",".$mm."/".$jj);
+					fputs($fp, "1,".$distance.",".$jj.$mm);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_speed.txt";
 					$speed = $distance * 60 / $time;
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$speed.",".$mm."/".$jj);
+					fputs($fp, "1,".$speed.",".$jj.$mm);
 					fputs($fp, "\n");				
 					fclose($fp);
 				
@@ -115,19 +115,25 @@
             </section>
             
             <footer>
-                <div id="tweet">
+			<center>
+                <div id="mes_amis">
                     <h1>Inscription</h1>
-                    <li><a href="inscription.php">Sign up</a></li>
-                    <p></p>
+					<ul>
+						<li><a href="inscription.php">Sign up</a></li>
+						<li><a href="inscription.php">Contact us</a></li>
+						<li><a href="http://en.wikipedia.org/wiki/Complex_adaptive_system">Auto Adaptive Systems</a></li>
+					</ul>
+					<p></p>
                 </div>
                 <div id="mes_amis">
                     <h1>Links</h1>
                     <ul>
-                        <li><a href="#">EPITA</a></li>
-                        <li><a href="#">EPITA Masters</a></li>
-                        <li><a href="#">So Innov</a></li>
+                        <li><a href="http://www.epita.fr/">EPITA</a></li>
+                        <li><a href="http://www.epita.fr/masters/">EPITA Masters</a></li>
+                        <li><a href="so-innov.fr">So Innov</a></li>
                     </ul>
                 </div>
+				</center>
             </footer>
         </div>
     </body>

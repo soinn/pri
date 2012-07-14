@@ -3,7 +3,6 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-		<script language="javascript" type="text/javascript" src="graph/txt_to_html_weight.js"></script>
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -30,7 +29,7 @@
             </div>
             
             <section>
-                <article>
+                
                 <?php
 				if (isset($_POST['mot_de_passe']))
 				{
@@ -45,7 +44,6 @@
 						$ligne1 = fgets($fp, 42);
 						$ligne2 = fgets($fp, 42);
 						fclose($fp);
-
 					}
 					else
 					{
@@ -56,11 +54,27 @@
 					if ($ligne1 == $login AND $ligne2 == $password)
 					{
 						?>
-						<h1>Welcome in your Running Application.</h1></br>
+						<article>
+						<h1>Welcome in your Running Application</h1></br>
 						<?php echo "<p><a href='change_data.php?login=".$login." '>Data</a> Change your data (VMA, cardiac frequence...)</p></br>"; ?>
 						<?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenge!</p></br>"; ?>
 						<?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progress.</p></br>"; ?>
 						<?php echo "<p><a href='new_vma.php?login=".$login." '>New VMA test</a> Make a new VMA test weekly to improve your performance.</p></br>"; ?>
+						</article>
+						<aside>
+						<h1><center>Graphs & other data</center></h1>
+						<?php echo "<p><a href='graph/txt_to_html_temperature.php?login=".$login." '>Temperature Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_weight.php?login=".$login." '>Weight Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_heart.php?login=".$login." '>Heart Rate Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_vma.php?login=".$login." '>VMA Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_distance.php?login=".$login." '>Distance Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_speed.php?login=".$login." '>Speed Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_time.php?login=".$login." '>Time Graph</a></p>"; ?>
+						</aside>
+						
+						<article>
+						<p>METTRE GRAPHS OBJECTIFS ICI ARNAUD</p>
+						</article>
 						<?php
 					}
 					else
@@ -73,38 +87,32 @@
 					echo '<p>Incorrect password.</p>';
 				}
 				?>
-				</article>
-                <aside>
-				<h1>Graphs</h1>
-				<?php echo "<p><a href='lol.php?login=".$login." '>Temperature</a></p>"; ?>
+	
 
-				<?php echo "<p><a href='graph/graph_weight.php?login=".$login." '>Weight</a></p>"; ?>
+
 				
-				
-				<a onclick="javascript: txt_to_html_weight(); return false;" href="graph/graph_weight.php?login=adrien">Catégorie principale</a>
-				
-				<?php echo "<p><a href='lol.php?login=".$login." '>Cardiac Frequence</a></p>"; ?>
-				<?php echo "<p><a href='lol.php?login=".$login." '>VMA/Week</a></p>"; ?>
-				<?php echo "<p><a href='lol.php?login=".$login." '>Kilometers/Week</a></p>"; ?>
-				<?php echo "<p><a href='lol.php?login=".$login." '>Speed (km/h)</a></p>"; ?>
-				<?php echo "<p><a href='lol.php?login=".$login." '>Duration of running</a></p>"; ?>
-                </aside>
             </section>
             
             <footer>
-                <div id="tweet">
+			<center>
+                <div id="mes_amis">
                     <h1>Inscription</h1>
-                    <li><a href="inscription.php">Sign up</a></li>
-                    <p></p>
+					<ul>
+						<li><a href="inscription.php">Sign up</a></li>
+						<li><a href="inscription.php">Contact us</a></li>
+						<li><a href="http://en.wikipedia.org/wiki/Complex_adaptive_system">Auto Adaptive Systems</a></li>
+					</ul>
+					<p></p>
                 </div>
                 <div id="mes_amis">
                     <h1>Links</h1>
                     <ul>
-                        <li><a href="#">EPITA</a></li>
-                        <li><a href="#">EPITA Masters</a></li>
-                        <li><a href="#">So Innov</a></li>
+                        <li><a href="http://www.epita.fr/">EPITA</a></li>
+                        <li><a href="http://www.epita.fr/masters/">EPITA Masters</a></li>
+                        <li><a href="so-innov.fr">So Innov</a></li>
                     </ul>
                 </div>
+				</center>
             </footer>
         </div>
     </body>

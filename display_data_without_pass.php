@@ -86,19 +86,25 @@
             </section>
             
             <footer>
-                <div id="tweet">
+			<center>
+                <div id="mes_amis">
                     <h1>Inscription</h1>
-                    <li><a href="inscription.php">Sign up</a></li>
-                    <p></p>
+					<ul>
+						<li><a href="inscription.php">Sign up</a></li>
+						<li><a href="inscription.php">Contact us</a></li>
+						<li><a href="http://en.wikipedia.org/wiki/Complex_adaptive_system">Auto Adaptive Systems</a></li>
+					</ul>
+					<p></p>
                 </div>
                 <div id="mes_amis">
                     <h1>Links</h1>
                     <ul>
-                        <li><a href="#">EPITA</a></li>
-                        <li><a href="#">EPITA Masters</a></li>
-                        <li><a href="#">So Innov</a></li>
+                        <li><a href="http://www.epita.fr/">EPITA</a></li>
+                        <li><a href="http://www.epita.fr/masters/">EPITA Masters</a></li>
+                        <li><a href="so-innov.fr">So Innov</a></li>
                     </ul>
                 </div>
+				</center>
             </footer>
         </div>
     </body>

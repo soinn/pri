@@ -25,10 +25,10 @@ Improve yourself with Auto-Adaptive System !
 <?php
 $login = $_GET['login'];
 ?>
-<h1>Weight Graph</h1></br>
+<h1>VMA Graph</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
-</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
-</br><p>This is time in x-axis and kilograms in y-axis.</p>
+</br><p>This the graph of your vma, each point match with one of your training and the weight you recorded during this training.</p>
+</br><p>This is time in x-axis and vma in y-axis.</p>
 </br><p id="hoverdata">Mouse hovers at
 (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
 
@@ -36,12 +36,7 @@ $login = $_GET['login'];
 <script type="text/javascript">
 $(function () {
 var weight = [
-[2010, 90], 
-[2011, 78], 
-[0812, 60], 
-[1112, 75], 
-[1212, 70], 
-[0429, 110], 
+[Time, Temp], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -51,7 +46,7 @@ var jour = Math.floor(weight[i][0] / 100);
 var mois = weight[i][0] % 100;
 weight2[i][0] = mois + (jour / 30);}
 var plot = $.plot($("#placeholder"),
-[ { data: weight2, label: "weight"}], {
+[ { data: weight2, label: "vma"}], {
 series: {
 lines: { show: true },
 points: { show: true }},
