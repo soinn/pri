@@ -40,7 +40,7 @@
 					<p><label>Age</label> : </br><input type="number" name="age" /></p>
 					<p><label>Weight</label> : </br><input type="number" name="weight" /></p>
 					<p><label>Size</label> : </br><input type="number" name="size" /></p>
-					<input type="submit" value="Register" />
+					</br><center><input type="submit" value="Register" /></center>
 				</form>
 				</article>
                 <aside>

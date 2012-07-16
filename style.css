@@ -210,6 +210,11 @@ article div
 	box-shadow: 0px 2px 5px #1c1a19;
 }
 
+article table
+{
+	background-color: white;
+}
+
 aside
 {
     position: right;

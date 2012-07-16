@@ -34,12 +34,12 @@
 					$login = $_GET['login'];
 				?>
 				<?php echo "<form action='display_data_after_vma.php?login=".$login." 'method='post'>"; ?>
-					<p>VMA: Maximum Aerobic Speed (km / h). Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max). 
-					To establish your VMA without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100. 
-					We will use the Half Cooper method. 
-					Example: A runner who runs 1350 meters in 6 minutes will have a VMA of 1350: 100 = 13.5 km / h</p>
-					<p><label>VMA (km/h)</label> : </br><input type="number" name="vma" /></p>
-										<p><label class="description" for="element_2">Date of the training :</label></br>
+					<p></br></br>VMA: Maximum Aerobic Speed (km / h). </br>Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max). 
+					</br></br>To establish your VMA without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100. 
+					</br>We will use the Half Cooper method. 
+					</br></br>Example: A runner who runs 1350 meters in 6 minutes will have a VMA of 1350: 100 = 13.5 km / h</p>
+					</br><p><label>VMA (km/h)</label> : </br><input type="number" name="vma" /></p>
+					</br><p><label class="description" for="element_2">Date of the training :</label></br>
 					<span>
 						<input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text"> /
 						<label for="element_2_1">MM</label>
@@ -52,8 +52,8 @@
 						<input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text">
 						<label for="element_2_3">AAAA</label>
 					</span></br></br>
-					<input type="submit" value="Confirm" />
-					<p>Doing this test quickly can help us to improve your training.</p>
+					<center><input type="submit" value="Confirm" /></center></br>
+					<p>Doing this test quickly can help us to improve your training.</p></br></br>
 				</form>
 				</article>
                 <aside>

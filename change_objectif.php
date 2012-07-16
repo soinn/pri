@@ -34,24 +34,25 @@
 					$login = $_GET['login'];
 				?>
 				<?php echo "<form action='display_data_after_changing_objectives.php?login=".$login." 'method='post'>"; ?>
-					<p>Please fill this informations.</p>
-					<p>For example, if you will running a Marathon in 6 months and you want to do the Marathon in 4 hours. Fill the 'Delay' with 180 days, 
+					</br></br><p>Please fill this informations.</p></br>
+					<p>For example, if you will running a Marathon in 6 months and you want to do the Marathon in 4 hours.</br> Fill the 'Delay' with 180 days, 
 					the 'Course' with 42 km and the 'Time' with 240 minutes.</p>
 
-					<p>
+					<p></br></br>
 					<label for="course">Select the kind of course you want to do:</label><br/>
 					<select name="course" id="course">
 					<option value="5">5 km</option>
 					<option value="10">10 km</option>
 					<option value="21">Semi-Marathon (21 km)</option>
 					<option value="42">Marathon (42 km)</option>
-					</select>
-					</p>	
-					<p><label>Delay (days)</label> : </br><input type="number" name="delay" /></p>
-					<p><label>Time(minutes)</label> : </br><input type="number" name="time" /></p>
-					<input type="submit" value="Done" />
+					</select></br>
+					</p>	</br>
+					<p><label>Delay (days)</label> : </br><input type="number" name="delay" /></p></br>
+					<p><label>Time(minutes)</label> : </br><input type="number" name="time" /></p></br>
+					<center><input type="submit" value="Done" /></center></br>
 				</form>
-				<p>And just let the Running App' shows you the way to success!</p>
+				<p></br>And just let the Running App' shows you the way to success!</p>
+				</br></br>
 				</article>
                 <aside>
                     <h1>About us</h1>

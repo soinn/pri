@@ -34,8 +34,8 @@
 					$login = $_GET['login'];
 				?>
 				<?php echo "<form action='display_data_after_training.php?login=".$login." 'method='post'>"; ?>
-					<p>Please fill this after each training.</p>
-					<p>All the data will be usefull for the Auto-Adaptive System.</p></br>
+					<p></br>Please fill this after each training.</p>
+					</br><p>All the data will be usefull for the Auto-Adaptive System.</p></br>
 					<p><label class="description" for="element_2">Date of the training :</label></br>
 					<span>
 						<input id="element_2_1" name="element_2_1" class="element text" size="2" maxlength="2" value="" type="text"> /
@@ -49,13 +49,13 @@
 						<input id="element_2_3" name="element_2_3" class="element text" size="4" maxlength="4" value="" type="text">
 						<label for="element_2_3">AAAA</label>
 					</span>
-					<p><label>Distance (km)</label> : </br><input type="number" name="distance" /></p>	
-					<p><label>Time (min)</label> : </br><input type="number" name="time" /></p>
-					<p><label>Cardiac Frequence (puls/min)</label> : </br><input type="number" name="frequence" /></p>
-					<p><label>Weight (kg)</label> : </br><input type="number" name="weight" /></p>
-					<input type="submit" value="Confirm" />
+					</br></br><p><label>Distance (km)</label> : </br><input type="number" name="distance" /></p>	
+					</br><p><label>Time (min)</label> : </br><input type="number" name="time" /></p>
+					</br><p><label>Cardiac Frequence (puls/min)</label> : </br><input type="number" name="frequence" /></p>
+					</br><p><label>Weight (kg)</label> : </br><input type="number" name="weight" /></p>
+					</br><center><input type="submit" value="Confirm" /></center>
 				</form>
-				</br><img src="images/Fun Run Logo.png" alt="" id="funrun" /></br>
+				</br><img src="images/lol" alt="" id="funrun" /></br>
 				</article>
                 <aside>
                     <h1>About us</h1>

@@ -55,11 +55,13 @@
 					{
 						?>
 						<article>
-						<h1>Welcome in your Running Application</h1></br>
-						<?php echo "<p><a href='change_data.php?login=".$login." '>Data</a> Change your data (VMA, cardiac frequence...)</p></br>"; ?>
-						<?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenge!</p></br>"; ?>
-						<?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progress.</p></br>"; ?>
-						<?php echo "<p><a href='new_vma.php?login=".$login." '>New VMA test</a> Make a new VMA test weekly to improve your performance.</p></br>"; ?>
+						<h1>Welcome in your Auto-Adaptive System</h1></br>
+						<ul>
+						<li><?php echo "<p><a href='change_data.php?login=".$login." '>Data</a> Change your data (VMA, heart rate...)</p></br>"; ?></li>
+						<li><?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenges!</p></br>"; ?></li>
+						<li><?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progresses.</p></br>"; ?></li>
+						<li><?php echo "<p><a href='new_vma.php?login=".$login." '>New VMA test</a> Make a new VMA test weekly to improve your performance.</p></br>"; ?></li>
+						</ul>
 						</article>
 						<aside>
 						<h1><center>Graphs & other data</center></h1>
@@ -74,6 +76,25 @@
 						
 						<article>
 						<p>METTRE GRAPHS OBJECTIFS ICI ARNAUD</p>
+						</article>
+						
+						<article>
+						<h1>Equipments</h1>
+						<center>
+						<TABLE border="1">
+						 <TR>
+						 <TH> <img src="images/coeur.jpg" alt="ex1" /> </TH>
+						 <TH> <img src="images/montre.png" alt="ex1" /> </TH>
+						 <TH> <img src="images/thermometre.jpg" alt="ex1" /> </TH>
+						 </TR>
+						 <TR>
+		
+						 <TD> <a href="http://gearcrave.com/2009-05-07/pro-form-precision-trainer-xt-heart-monitor/">Buy it!</a></TD>
+						<TD> <a href="http://www.polarfrance.fr/fr/produits/optimisez_vos_performances/course_a_pied_multisport/RCX5">Buy it!</a></TD>			
+						<TD> <a href="http://www.amazon.com/TEMPer-USB-Thermometer-w-Alerts/dp/B002VA813U">Buy it!</a></TD>
+						 </TR>
+						</TABLE>
+						</center>
 						</article>
 						<?php
 					}

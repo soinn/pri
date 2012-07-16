@@ -34,18 +34,19 @@
 					$login = $_GET['login'];
 				?>
 				<?php echo "<form action='display_data_without_pass.php?login=".$login." 'method='post'>"; ?>
-					<p>Please fill this informations.</p>
-					<p>VMA: Maximum Aerobic Speed (km / h). Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max). 
-					To establish your VMA without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100. 
-					We will use the Half Cooper method. 
-					Example: A runner who runs 1350 meters in 6 minutes will have a VMA of 1350: 100 = 13.5 km / h</p>
-					<p><label>VMA (km/h)</label> : </br><input type="number" name="vma" /></p>	
-					<p><label>Cardiac Frequence Max (puls/min)</label> : </br><input type="number" name="fmax" /></p>
-					<p><label>Cardiac Frequence Normal(puls/min)</label> : </br><input type="number" name="fnormal" /></p>
-					<p><label>Sport level</label> : </br><input type="radio" name="level" value="beginner" id="beginner" /> <label for="beginner">Beginner</label>
-					<input type="radio" name="level" value="confirmed" id="confirmed" /> <label for="confirmed">Confirmed</label>
+					</br></br><p>Please fill this informations.</p></br>
+					<p>VMA: Maximum Aerobic Speed (km / h).</br> Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max).</br> 
+					To establish your VMA without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100.</br> 
+					We will use the Half Cooper method.</br> 
+					Example: A runner who runs 1350 meters in 6 minutes will have a VMA of 1350: 100 = 13.5 km / h</p></br>
+					<p><label>VMA (km/h)</label> : </br><input type="number" name="vma" /></p></br>	
+					<p><label>Cardiac Frequence Max (puls/min)</label> : </br><input type="number" name="fmax" /></p></br>
+					<p><label>Cardiac Frequence Normal(puls/min)</label> : </br><input type="number" name="fnormal" /></p></br>
+					<p><label>Sport level</label> : </br><input type="radio" name="level" value="beginner" id="beginner" /> <label for="beginner">Beginner</label></br>
+					<input type="radio" name="level" value="confirmed" id="confirmed" /> <label for="confirmed">Confirmed</label></br>
 					<input type="radio" name="level" value="expert" id="expert" /> <label for="expert">Expert</label></p></br>
-					<input type="submit" value="Confirm" />
+					<center><input type="submit" value="Confirm" /></center>
+					</br>
 				</form>
 				</article>
                 <aside>
