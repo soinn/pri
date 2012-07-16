@@ -59,31 +59,31 @@
 				
 				$filename = "user/".$file."_weight.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,".$_POST['weight'].",0101");
+				fputs($fp, "NO,Temp,Time");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_vma.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,100,0101");
+				fputs($fp, "NO,Temp,Time");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_frequence.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,100,0101");
+				fputs($fp, "NO,Temp,Time");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_duration.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,0,0101");
+				fputs($fp, "NO,Temp,Time");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_distance.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,0,0101");
+				fputs($fp, "NO,Temp,Time");
 				fputs($fp, "\n");
 				fclose($fp);
 				
