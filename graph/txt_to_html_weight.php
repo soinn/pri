@@ -10,6 +10,7 @@ $fp = fopen("graph_weight.php","w+");
 
 fputs($fp, "<!DOCTYPE html>\r\n<html>\r\n<head>\n");
 fputs($fp, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<link rel=\"stylesheet\" href=\"../style.css\" />\n");
+fputs($fp, "<link href=\"media-queries.css\" rel=\"stylesheet\" type=\"text/css\">");
 fputs($fp, "<title>So Innov - Research & Innovation Project</title>\n");
 fputs($fp, "<!--[if lte IE 8]><script language=\"javascript\" type=\"text/javascript\" src=\"../excanvas.min.js\"></script><![endif]-->\n");
 fputs($fp, "<script language=\"javascript\" type=\"text/javascript\" src=\"jquery.js\"></script>\n");
@@ -35,7 +36,19 @@ fputs($fp, "<?php\n");
 fputs($fp, "\$login = \$_GET['login'];\n");
 fputs($fp, "?>\n");
 fputs($fp, "<h1>Weight Graph</h1></br>\n");
-fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
+
+fputs($fp, "<script type=\"text/javascript\">\n");
+fputs($fp, "if (document.body)\n");
+fputs($fp, "{var larg = (document.body.clientWidth);\n");
+fputs($fp, "var haut = (document.body.clientHeight);}\n");
+fputs($fp, "else{\n");
+fputs($fp, "var larg = (window.innerWidth);\n");
+fputs($fp, "var haut = (window.innerHeight);\n");
+fputs($fp, "}\n");
+fputs($fp, "document.write(\"<p>Cette fenêtre fait \" + larg + \" de large et \"+haut+\" de haut</p>\");\n" );
+
+fputs($fp, "document.write(\"<center><div id=\"placeholder\" style=\"width:\"+larg+\"px;height:\"+haut+\"px\"></div></center>\")</script>\n");
+
 fputs($fp, "</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>\n");
 fputs($fp, "</br><p>This is time in x-axis and kilograms in y-axis.</p>\n");
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");

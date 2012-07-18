@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../style.css" />
-<title>So Innov - Research & Innovation Project</title>
+<link href="media-queries.css" rel="stylesheet" type="text/css"><title>So Innov - Research & Innovation Project</title>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
 <script language="javascript" type="text/javascript" src="jquery.js"></script>
 <script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
@@ -26,7 +26,16 @@ Improve yourself with Auto-Adaptive System !
 $login = $_GET['login'];
 ?>
 <h1>Weight Graph</h1></br>
-<center><div id="placeholder" style="width:600px;height:300px"></div></center>
+<script type="text/javascript">
+if (document.body)
+{var larg = (document.body.clientWidth);
+var haut = (document.body.clientHeight);}
+else{
+var larg = (window.innerWidth);
+var haut = (window.innerHeight);
+}
+document.write("<p>Cette fenêtre fait " + larg + " de large et "+haut+" de haut</p>");
+document.write("<center><div id="placeholder" style="width:"+larg+"px;height:"+haut+"px"></div></center>")</script>
 </br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
 </br><p>This is time in x-axis and kilograms in y-axis.</p>
 </br><p id="hoverdata">Mouse hovers at

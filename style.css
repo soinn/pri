@@ -1,5 +1,4 @@
 ﻿/* Définition des polices personnalisées */
-
 @font-face
 {
     font-family: 'BallparkWeiner';
@@ -37,7 +36,7 @@ body
 #bloc_page
 {
     width: 900px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 section h1, footer h1, nav a
