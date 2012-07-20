@@ -1,6 +1,6 @@
 <html>
 <?php $login = $_GET['login']; ?>
-<?php echo "<META http-equiv='refresh' content='2;URL=graph_objectives.php'>";?>
+<?php echo "<META http-equiv='refresh' content='2;URL=graph_objectives.php?login=".$login."'>";?>
 <p>Génération du graphe</p>
 <?php 
 
@@ -32,6 +32,7 @@ fputs($fp, "</div></div>\n");
 fputs($fp, "<section>\n");
 fputs($fp, "<article>\n");
 fputs($fp, "<?php\n");
+fputs($fp, "\$login = \$_GET['login'];\n");
 fputs($fp, "?>\n");
 fputs($fp, "<h1>Training Plan for 10Km in 8 Weeks (Rookie)</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
@@ -71,6 +72,35 @@ while(!feof($fd))
 fclose($fd);
 fputs($fp, "];\n");
 
+$val = 1;
+fputs($fp, "var weighty = [\n");
+
+$txt = "../user/".$login."_distance.txt";
+$fd =  fopen($txt,"r");
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+
+	$lol = "[".$val.", ".$data[1]."], ";
+
+	fputs($fp, $lol);
+	fputs($fp, "\n");
+$val = $val +1;
+	}
+
+}
+fclose($fd);
+fputs($fp, "];\n");
+
 fputs($fp, "var weight2 = weight;\n");
 fputs($fp, "var nbr_valeur = weight.length;\n");
 fputs($fp, "for (i = 0; i < nbr_valeur; i++)\n");
@@ -81,7 +111,8 @@ fputs($fp, "weight2[i][0] = mois + (jour / 30);}\n");
 
 
 fputs($fp, "var plot = $.plot($(\"#placeholder\"),\n");
-fputs($fp, "[ { data: weight2, label: \"distance\"}], {\n");
+fputs($fp, "[ { data: weight2, label: \"10km\"}, { data: weighty, label: \"You\" }], {\n");
+
 fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");
@@ -132,8 +163,7 @@ fputs($fp, "<aside>\n");
 fputs($fp, "<h1><center>Graphs & other data</center></h1>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_temperature.php?login=$login '>Temperature Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_weight.php?login=$login '>Weight Graph</a></p>\"; ?>\n");
-fputs($fp, "<?php echo \"<p><a href='txt_to_html_heart.php?login=$login '>Heart Rqapl
-ate Graph</a></p>\"; ?>\n");
+fputs($fp, "<?php echo \"<p><a href='txt_to_html_heart.php?login=$login '>Heart Rate Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_vma.php?login=$login '>VMA Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_distance.php?login=$login '>Distance Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_speed.php?login=$login '>Speed Graph</a></p>\"; ?>\n");

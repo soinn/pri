@@ -67,21 +67,44 @@
 					<?php
 				?>
 						<article>
-						<h1><center>Objectives Graphs</center></h1>
-						<ul>
-						<li><?php echo "<p><a href='graph/txt_to_html_5rook.php'>5 Km Rookie</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_5conf.php'>5 Km Confirmed</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_5exp.php'>5 Km Expert</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_10rook.php'>10 Km Rookie</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_10conf.php'>10 Km Confirmed</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_10exp.php'>10 Km Expert</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_21rook.php'>21 Km Rookie</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_21conf.php'>21 Km Confirmed</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_21exp.php'>21 Km Expert</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_42rook.php'>Marathon Rookie</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_42conf.php'>Marathon Confirmed</a></p>"; ?>
-						<li><?php echo "<p><a href='graph/txt_to_html_42exp.php'>Marathon Expert</a></p>"; ?>
-						</ul>
+						<center>
+						
+						<TABLE border="1">
+						
+						  <CAPTION><h1> Compare your performance with trainings </h1></CAPTION>
+							<TR>
+							<TH> Distance/Level </TH>
+							<TH> Rookie </TH>
+							<TH> Confirmed </TH>
+							<TH> Expert </TH>
+								</TR>
+								<TR>
+							<TH> 5 KM </TH>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_5rook.php?login=".$login." '>5 Km Rookie</a></p>"; ?> </TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_5conf.php?login=".$login." '>5 Km Confirmed</a></p>"; ?> </TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_5exp.php?login=".$login." '>5 Km Expert</a></p>"; ?> </TD>
+								</TR>
+								<TR>
+							<TH> 10 KM </TH>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_10rook.php?login=".$login." '>10 Km Rookie</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_10conf.php?login=".$login." '>10 Km Confirmed</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_10exp.php?login=".$login." '>10 Km Expert</a></p>"; ?></TD>
+								</TR>
+						
+								<TR>
+							<TH> 21 KM </TH>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_21rook.php?login=".$login." '>21 Km Rookie</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_21conf.php?login=".$login." '>21 Km Confirmed</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_21exp.php?login=".$login." '>21 Km Expert</a></p>"; ?></TD>
+								</TR>
+								<TR>
+							<TH> 42 KM </TH>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_42rook.php?login=".$login." '>Marathon Rookie</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_42conf.php?login=".$login." '>Marathon Confirmed</a></p>"; ?></TD>
+							<TD> <?php echo "<p><a href='graph/txt_to_html_42exp.php?login=".$login." '>Marathon Expert</a></p>"; ?></TD>
+								</TR>
+							</TABLE>
+							</center>
 						</article>
 
             </section>

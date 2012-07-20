@@ -62,7 +62,7 @@ while(!feof($fd))
 	$ligne = substr($ligne,0,strlen($ligne)-1);
 	$data=explode(",", $ligne);
 
-	$lol = "[".$data[2].", ".$data[1]."], ";
+	$lol = "[".$data[0].", ".$data[1]."], ";
 
 	fputs($fp, $lol);
 	fputs($fp, "\n");
