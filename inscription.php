@@ -33,14 +33,14 @@
                 <article>
 				<form action="inscription_done.php" method="post">
 					<p>Please register to use our application.</p>
-					<p><label>Login</label> : </br><input type="text" name="login" /></p>
+					<p><label>Email</label> : </br><input type="text" name="login" /></p>
 					<p><label>Password</label> : </br><input type="password" name="password" /></p>
 					
 					<p><label>Sexe</label> : </br><input type="radio" name="sexe" value="male" id="male" /> <label for="male">Male</label>
 					<input type="radio" name="sexe" value="female" id="female" /> <label for="female">Female</label></p>
-					<p><label>Age</label> : </br><input type="number" name="age" /></p>
-					<p><label>Weight</label> : </br><input type="number" name="weight" /></p>
-					<p><label>Size</label> : </br><input type="number" name="size" /></p>
+					<p><label>Date of birth (mm/dd/yyyy)</label> : </br><input type="text" name="age" /></p>
+					<p><label>Weight (kg)</label> : </br><input type="number" name="weight" /></p>
+					<p><label>Size (cm)</label> : </br><input type="number" name="size" /></p>
 					</br><center><input type="submit" value="Register" /></center>
 				</form>
 				</article>

@@ -127,9 +127,9 @@
 						 </TR>
 						 <TR>
 		
-						 <TD> <a href="http://gearcrave.com/2009-05-07/pro-form-precision-trainer-xt-heart-monitor/">Buy it!</a></TD>
-						<TD> <a href="http://www.polarfrance.fr/fr/produits/optimisez_vos_performances/course_a_pied_multisport/RCX5">Buy it!</a></TD>			
-						<TD> <a href="http://www.amazon.com/TEMPer-USB-Thermometer-w-Alerts/dp/B002VA813U">Buy it!</a></TD>
+						 <TD> <a href="http://gearcrave.com/2009-05-07/pro-form-precision-trainer-xt-heart-monitor/"><center>Buy it!</center></a></TD>
+						<TD> <a href="http://www.polarfrance.fr/fr/produits/optimisez_vos_performances/course_a_pied_multisport/RCX5"><center>Buy it!</center></a></TD>			
+						<TD> <a href="http://www.amazon.com/TEMPer-USB-Thermometer-w-Alerts/dp/B002VA813U"><center>Buy it!</center></a></TD>
 						 </TR>
 						</TABLE>
 						</center>

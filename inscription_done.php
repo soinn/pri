@@ -49,7 +49,7 @@
 				fputs($fp, "\n");
 				fputs($fp, $_POST['sexe']);
 				fputs($fp, "\n");
-				fputs($fp, $_POST['age']);
+				fputs($fp, "20");
 				fputs($fp, "\n");
 				fputs($fp, $_POST['weight']);
 				fputs($fp, "\n");
@@ -60,31 +60,31 @@
 				
 				$filename = "user/".$file."_weight.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,".$_POST['weight'].",0101");
+				fputs($fp, "1,".$_POST['weight'].",0");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_vma.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,100,0101");
+				fputs($fp, "1,100,0");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_frequence.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,100,0101");
+				fputs($fp, "1,100,0");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_duration.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,0,0101");
+				fputs($fp, "1,0,0");
 				fputs($fp, "\n");
 				fclose($fp);
 				
 				$filename = "user/".$file."_distance.txt";
 				$fp = fopen($filename, "w+");
-				fputs($fp, "1,0,0101");
+				fputs($fp, "1,0,0");
 				fputs($fp, "\n");
 				fclose($fp);
 				

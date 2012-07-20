@@ -26,16 +26,7 @@ Improve yourself with Auto-Adaptive System !
 $login = $_GET['login'];
 ?>
 <h1>Weight Graph</h1></br>
-<script type="text/javascript">
-if (document.body)
-{var larg = (document.body.clientWidth);
-var haut = (document.body.clientHeight);}
-else{
-var larg = (window.innerWidth);
-var haut = (window.innerHeight);
-}
-document.write("<p>Cette fenêtre fait " + larg + " de large et "+haut+" de haut</p>");
-document.write("<center><div id="placeholder" style="width:"+larg+"px;height:"+haut+"px"></div></center>")</script>
+<center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
 </br><p>This is time in x-axis and kilograms in y-axis.</p>
 </br><p id="hoverdata">Mouse hovers at
@@ -45,13 +36,8 @@ document.write("<center><div id="placeholder" style="width:"+larg+"px;height:"+h
 <script type="text/javascript">
 $(function () {
 var weight = [
-[2010, 90], 
-[2011, 78], 
-[0812, 60], 
-[1112, 75], 
-[1212, 70], 
-[0429, 110], 
-[1212, 70], 
+[0, 75], 
+[1, 10], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -108,13 +94,13 @@ plot.highlight(item.series, item.datapoint);
 </article>
 <aside>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=vmb '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=vmb '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=vmb '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=vmb '>VMA Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=vmb '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=vmb '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=vmb '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>VMA Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>

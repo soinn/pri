@@ -25,7 +25,7 @@ Improve yourself with Auto-Adaptive System !
 <?php
 $login = $_GET['login'];
 ?>
-<h1>Training Plan for 21Km in 12 Weeks (Confirmed)</h1></br>
+<h1>Training Plan for 21Km in 12 Weeks (Expert)</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>
 </br><p>This is days in x-axis and kilometers in y-axis.</p>
@@ -38,151 +38,151 @@ $(function () {
 var weight = [
 [1, 4
 ], 
-[2, 2.5
+[2, 3
 ], 
 [3, 0
 ], 
-[4, 7
+[4, 8
 ], 
 [5, 0
 ], 
-[6, 8
+[6, 1
 ], 
 [7, 5
 ], 
 [8, 4
 ], 
-[9, 1.5
+[9, 2.5
 ], 
 [10, 4
 ], 
-[11, 7
+[11, 3
 ], 
 [12, 0
 ], 
-[13, 10
+[13, 15
 ], 
-[14, 6
+[14, 5
 ], 
 [15, 4
 ], 
-[16, 2.5
+[16, 3
 ], 
-[17, 7
+[17, 4
 ], 
-[18, 5
+[18, 8
 ], 
 [19, 0
 ], 
-[20, 11
+[20, 16
 ], 
 [21, 5
 ], 
 [22, 4
 ], 
-[23, 2
+[23, 3
 ], 
-[24, 0
+[24, 4
 ], 
-[25, 7
+[25, 3.5
 ], 
 [26, 0
 ], 
-[27, 11
+[27, 13
 ], 
-[28, 5
+[28, 6
 ], 
 [29, 4
 ], 
 [30, 2.5
 ], 
-[31, 8
+[31, 4
 ], 
-[32, 5
+[32, 3
 ], 
 [33, 0
 ], 
-[34, 12
+[34, 15
 ], 
-[35, 7
+[35, 6
 ], 
 [36, 4
 ], 
-[37, 2.5
+[37, 3
 ], 
-[38, 8
+[38, 4
 ], 
-[39, 7
+[39, 3
 ], 
 [40, 0
 ], 
-[41, 13
+[41, 17
 ], 
-[42, 7
+[42, 5
 ], 
 [43, 4
 ], 
 [44, 3
 ], 
-[45, 8
+[45, 4
 ], 
-[46, 7
+[46, 3
 ], 
 [47, 0
 ], 
-[48, 15
+[48, 20
 ], 
 [49, 7
 ], 
 [50, 4
 ], 
-[51, 2.5
+[51, 2
 ], 
-[52, 10
+[52, 4
 ], 
-[53, 5
+[53, 3
 ], 
 [54, 0
 ], 
-[55, 16
+[55, 18
 ], 
 [56, 7
 ], 
 [57, 4
 ], 
-[58, 3.5
+[58, 3
 ], 
-[59, 7
+[59, 4
 ], 
-[60, 7
+[60, 3.5
 ], 
 [61, 0
 ], 
-[62, 17
+[62, 16
 ], 
-[63, 0
+[63, 7
 ], 
 [64, 4
 ], 
 [65, 3
 ], 
-[66, 8
+[66, 4
 ], 
-[67, 5
+[67, 3
 ], 
 [68, 0
 ], 
-[69, 19
+[69, 22
 ], 
-[70, 5
+[70, 7
 ], 
 [71, 4
 ], 
-[72, 3.5
+[72, 3
 ], 
 [73, 0
 ], 
-[74, 5
+[74, 8
 ], 
 [75, 0
 ], 
@@ -200,22 +200,16 @@ var weight = [
 ], 
 [82, 0
 ], 
-[83, 0
+[83, 1.5
 ], 
 [84, 21.1], 
 ];
 var weighty = [
-[1, 2
-], 
-[2, 5
-], 
-[3, 6
-], 
-[4, 7
-], 
-[5, 4
-], 
-[6, 9], 
+[1, 0], 
+[2, 42], 
+[3, 42], 
+[4, 42], 
+[5, 00], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -272,13 +266,13 @@ plot.highlight(item.series, item.datapoint);
 </article>
 <aside>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=vmb '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=vmb '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=vmb '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=vmb '>VMA Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=vmb '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=vmb '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=vmb '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>VMA Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>

@@ -64,32 +64,42 @@
 					
 					$filename = "user/".$login."_weight.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$weight.",".$jj.$mm);
+					$count = file($filename);
+					$count_train = count($count) - 1 + 1;
+					fputs($fp, "1,".$weight.",".$count_train);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_frequence.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$frequence.",".$jj.$mm);
+					$count = file($filename);
+					$count_train = count($count) - 1 + 1;
+					fputs($fp, "1,".$frequence.",".$count_train);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_duration.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$time.",".$jj.$mm);
+					$count = file($filename);
+					$count_train = count($count) - 1 + 1;
+					fputs($fp, "1,".$time.",".$count_train);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_distance.txt";
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$distance.",".$jj.$mm);
+					$count = file($filename);
+					$count_train = count($count) - 1 + 1;
+					fputs($fp, "1,".$distance.",".$count_train);
 					fputs($fp, "\n");				
 					fclose($fp);
 					
 					$filename = "user/".$login."_speed.txt";
 					$speed = $distance * 60 / $time;
 					$fp = fopen($filename, "a+");
-					fputs($fp, "1,".$speed.",".$jj.$mm);
+					$count = file($filename);
+					$count_train = count($count) - 1 + 1;
+					fputs($fp, "1,".$speed.",".$count_train);
 					fputs($fp, "\n");				
 					fclose($fp);
 				

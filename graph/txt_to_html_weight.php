@@ -36,19 +36,7 @@ fputs($fp, "<?php\n");
 fputs($fp, "\$login = \$_GET['login'];\n");
 fputs($fp, "?>\n");
 fputs($fp, "<h1>Weight Graph</h1></br>\n");
-
-fputs($fp, "<script type=\"text/javascript\">\n");
-fputs($fp, "if (document.body)\n");
-fputs($fp, "{var larg = (document.body.clientWidth);\n");
-fputs($fp, "var haut = (document.body.clientHeight);}\n");
-fputs($fp, "else{\n");
-fputs($fp, "var larg = (window.innerWidth);\n");
-fputs($fp, "var haut = (window.innerHeight);\n");
-fputs($fp, "}\n");
-fputs($fp, "document.write(\"<p>Cette fenêtre fait \" + larg + \" de large et \"+haut+\" de haut</p>\");\n" );
-
-fputs($fp, "document.write(\"<center><div id=\"placeholder\" style=\"width:\"+larg+\"px;height:\"+haut+\"px\"></div></center>\")</script>\n");
-
+fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
 fputs($fp, "</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>\n");
 fputs($fp, "</br><p>This is time in x-axis and kilograms in y-axis.</p>\n");
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
