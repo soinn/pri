@@ -115,8 +115,22 @@
 						</aside>
 					<?php
 				?>
-								<article>
-						<p>METTRE GRAPHS OBJECTIFS ICI ARNAUD</p>
+						<article>
+						<h1><center>Objectives Graphs</center></h1>
+						<ul>
+						<li><?php echo "<p><a href='graph/txt_to_html_5rook.php'>5 Km Rookie</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_5conf.php'>5 Km Confirmed</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_5exp.php'>5 Km Expert</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_10rook.php'>10 Km Rookie</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_10conf.php'>10 Km Confirmed</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_10exp.php'>10 Km Expert</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_21rook.php'>21 Km Rookie</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_21conf.php'>21 Km Confirmed</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_21exp.php'>21 Km Expert</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_42rook.php'>Marathon Rookie</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_42conf.php'>Marathon Confirmed</a></p>"; ?>
+						<li><?php echo "<p><a href='graph/txt_to_html_42exp.php'>Marathon Expert</a></p>"; ?>
+						</ul>
 						</article>
             </section>
             

@@ -1,12 +1,12 @@
 <html>
 <?php $login = $_GET['login']; ?>
-<?php echo "<META http-equiv='refresh' content='2;URL=graph_temp.php?login=".$login."'>";?>
+<?php echo "<META http-equiv='refresh' content='2;URL=graph_objectives.php'>";?>
 <p>Génération du graphe</p>
 <?php 
 
-unlink ("graph_temp.php");
+unlink ("graph_objectives.php");
 
-$fp = fopen("graph_temp.php","w+");
+$fp = fopen("graph_objectives.php","w+");
 
 fputs($fp, "<!DOCTYPE html>\r\n<html>\r\n<head>\n");
 fputs($fp, "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<link rel=\"stylesheet\" href=\"../style.css\" />\n");
@@ -32,12 +32,11 @@ fputs($fp, "</div></div>\n");
 fputs($fp, "<section>\n");
 fputs($fp, "<article>\n");
 fputs($fp, "<?php\n");
-fputs($fp, "\$login = \$_GET['login'];\n");
 fputs($fp, "?>\n");
-fputs($fp, "<h1>Weight Graph</h1></br>\n");
+fputs($fp, "<h1>Training Plan for 21Km in 12 Weeks (Rookie)</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
-fputs($fp, "</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>\n");
-fputs($fp, "</br><p>This is time in x-axis and kilograms in y-axis.</p>\n");
+fputs($fp, "</br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>\n");
+fputs($fp, "</br><p>This is days in x-axis and kilometers in y-axis.</p>\n");
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
 fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"clickdata\"></span></p>\n");
 fputs($fp, "\n");
@@ -47,7 +46,7 @@ fputs($fp, "<script type=\"text/javascript\">\n");
 fputs($fp, "$(function () {\n");
 fputs($fp, "var weight = [\n");
 
-$txt = "../user/".$login."_temp.txt";
+$txt = "../objectives/21deb.txt";
 $fd =  fopen($txt,"r");
 
 while(!feof($fd)) 
@@ -59,10 +58,10 @@ while(!feof($fd))
 	}
 	else
 	{
-	$ligne = substr($ligne,0,strlen($ligne)-1);
+	$ligne = substr($ligne,0,strlen($ligne));
 	$data=explode(",", $ligne);
 
-	$lol = "[".$data[1].", ".$data[2]."], ";
+	$lol = "[".$data[0].", ".$data[1]."], ";
 
 	fputs($fp, $lol);
 	fputs($fp, "\n");
@@ -82,12 +81,12 @@ fputs($fp, "weight2[i][0] = mois + (jour / 30);}\n");
 
 
 fputs($fp, "var plot = $.plot($(\"#placeholder\"),\n");
-fputs($fp, "[ { data: weight2, label: \"weight\"}], {\n");
+fputs($fp, "[ { data: weight2, label: \"distance\"}], {\n");
 fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");
 fputs($fp, "grid: { hoverable: true, clickable: true },\n");
-fputs($fp, "yaxis: { min: -1, max: 150 }});\n");
+fputs($fp, "yaxis: { min: -1, max: 22 }});\n");
 fputs($fp, "function showTooltip(x, y, contents) {\n");
 fputs($fp, "$('<div id=\"tooltip\">' + contents + '</div>').css( {\n");
 fputs($fp, "position: 'absolute',\n");
@@ -133,7 +132,8 @@ fputs($fp, "<aside>\n");
 fputs($fp, "<h1><center>Graphs & other data</center></h1>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_temperature.php?login=$login '>Temperature Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_weight.php?login=$login '>Weight Graph</a></p>\"; ?>\n");
-fputs($fp, "<?php echo \"<p><a href='txt_to_html_heart.php?login=$login '>Heart Rate Graph</a></p>\"; ?>\n");
+fputs($fp, "<?php echo \"<p><a href='txt_to_html_heart.php?login=$login '>Heart Rqapl
+ate Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_vma.php?login=$login '>VMA Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_distance.php?login=$login '>Distance Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_speed.php?login=$login '>Speed Graph</a></p>\"; ?>\n");

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../style.css" />
-<link href="media-queries.css" rel="stylesheet" type="text/css"><title>So Innov - Research & Innovation Project</title>
+<title>So Innov - Research & Innovation Project</title>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
 <script language="javascript" type="text/javascript" src="jquery.js"></script>
 <script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
@@ -26,16 +26,7 @@ Improve yourself with Auto-Adaptive System !
 $login = $_GET['login'];
 ?>
 <h1>Weight Graph</h1></br>
-<script type="text/javascript">
-if (document.body)
-{var larg = (document.body.clientWidth);
-var haut = (document.body.clientHeight);}
-else{
-var larg = (window.innerWidth);
-var haut = (window.innerHeight);
-}
-document.write("<p>Cette fenêtre fait " + larg + " de large et "+haut+" de haut</p>");
-document.write("<center><div id="placeholder" style="width:"+larg+"px;height:"+haut+"px"></div></center>")</script>
+<center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
 </br><p>This is time in x-axis and kilograms in y-axis.</p>
 </br><p id="hoverdata">Mouse hovers at
@@ -45,13 +36,48 @@ document.write("<center><div id="placeholder" style="width:"+larg+"px;height:"+h
 <script type="text/javascript">
 $(function () {
 var weight = [
-[2010, 90], 
-[2011, 78], 
-[0812, 60], 
-[1112, 75], 
-[1212, 70], 
-[0429, 110], 
-[1212, 70], 
+[28.31,  20819], 
+[28.88,  20824], 
+[30.13,  20829], 
+[30.88,  20834], 
+[31.50,  20839], 
+[31.88,  20844], 
+[31.88,  20849], 
+[31.88,  20854], 
+[31.88,  20859], 
+[31.88,  20904], 
+[32.38,  20909], 
+[32.69,  20914], 
+[32.81,  20919], 
+[33.00,  20924], 
+[33.19,  20929], 
+[33.25,  20934], 
+[33.31,  20939], 
+[33.44,  20944], 
+[33.50,  20949], 
+[33.56,  20954], 
+[33.56,  20959], 
+[33.56,  21004], 
+[33.56,  21009], 
+[33.56,  21014], 
+[33.56,  21019], 
+[33.56,  21024], 
+[33.56,  21029], 
+[33.56,  21034], 
+[33.56,  21039], 
+[33.56,  21044], 
+[33.56,  21049], 
+[33.56,  21054], 
+[33.31,  21059], 
+[32.88,  21104], 
+[32.63,  21109], 
+[32.31,  21114], 
+[31.88,  21119], 
+[31.88,  21124], 
+[31.75,  21129], 
+[31.50,  21134], 
+[31.25,  21139], 
+[31.13,  21144], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
