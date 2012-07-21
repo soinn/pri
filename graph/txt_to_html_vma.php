@@ -82,7 +82,7 @@ fputs($fp, "weight2[i][0] = mois + (jour / 30);}\n");
 
 
 fputs($fp, "var plot = $.plot($(\"#placeholder\"),\n");
-fputs($fp, "[ { data: weight2, label: \"vma\"}], {\n");
+fputs($fp, "[ { data: weight2, label: \"vVO2max\"}], {\n");
 fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");

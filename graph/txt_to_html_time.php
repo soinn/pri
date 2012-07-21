@@ -82,7 +82,7 @@ fputs($fp, "weight2[i][0] = mois + (jour / 30);}\n");
 
 
 fputs($fp, "var plot = $.plot($(\"#placeholder\"),\n");
-fputs($fp, "[ { data: weight2, label: \"minutes\"}], {\n");
+fputs($fp, "[ { data: weight2, label: \"time\"}], {\n");
 fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");
