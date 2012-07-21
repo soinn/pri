@@ -88,6 +88,10 @@
 				fputs($fp, "\n");
 				fclose($fp);
 				
+				$filename = "user/".$file."_temp.txt";
+				$fp = fopen($filename, "w+");
+				fclose($fp);
+				
 				?>
 				<p>Thanks.</p>
 				<p><a href="index.html">Return on home page.</a></p>
