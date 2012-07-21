@@ -36,11 +36,11 @@
 				?>
 				<?php echo "<form action='display_data_without_pass.php?login=".$login." 'method='post'>"; ?>
 					</br></br><p>Please fill this informations.</p></br>
-					<p>VMA: Maximum Aerobic Speed (km / h).</br> Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max).</br> 
-					To establish your VMA without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100.</br> 
+					<p>vVO2MAX: Maximum Aerobic Speed (km / h).</br> Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max).</br> 
+					To establish your vVO2MAX without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100.</br> 
 					We will use the Half Cooper method.</br> 
-					Example: A runner who runs 1350 meters in 6 minutes will have a VMA of 1350: 100 = 13.5 km / h</p></br>
-					<p><label>VMA (km/h)</label> : </br><input type="number" name="vma" /></p></br>	
+					Example: A runner who runs 1350 meters in 6 minutes will have a vVO2MAX of 1350: 100 = 13.5 km / h</p></br>
+					<p><label>vVO2MAX (km/h)</label> : </br><input type="number" name="vma" /></p></br>	
 					<p><label>Cardiac Frequence Max (puls/min)</label> : </br><input type="number" name="fmax" /></p></br>
 					<p><label>Cardiac Frequence Normal(puls/min)</label> : </br><input type="number" name="fnormal" /></p></br>
 					<p><label>Sport level</label> : </br><input type="radio" name="level" value="beginner" id="beginner" /> <label for="beginner">Beginner</label></br>

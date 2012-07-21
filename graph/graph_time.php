@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../style.css" />
-<title>So Innov - Research & Innovation Project</title>
+<link href="media-queries.css" rel="stylesheet" type="text/css"><title>So Innov - Research & Innovation Project</title>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
 <script language="javascript" type="text/javascript" src="jquery.js"></script>
 <script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
@@ -21,10 +21,20 @@ Improve yourself with Auto-Adaptive System !
 <a href="#" class="bouton_rouge"></a>
 </div></div>
 <section>
-<article>
 <?php
 $login = $_GET['login'];
 ?>
+<div id="graph_android">
+<ul>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=admin '>Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=admin ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=admin ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=admin '>vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=admin '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=admin '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=admin ' class='active' >Time</a>"; ?></li>
+</ul></div>
+<article>
 <h1>Time Graph</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your time, each point match with one of your training and the weight you recorded during this training.</p>
@@ -36,8 +46,7 @@ $login = $_GET['login'];
 <script type="text/javascript">
 $(function () {
 var weight = [
-[0, 75], 
-[1, 10], 
+[0, 123], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -47,12 +56,12 @@ var jour = Math.floor(weight[i][0] / 100);
 var mois = weight[i][0] % 100;
 weight2[i][0] = mois + (jour / 30);}
 var plot = $.plot($("#placeholder"),
-[ { data: weight2, label: "minutes"}], {
+[ { data: weight2, label: "time"}], {
 series: {
 lines: { show: true },
 points: { show: true }},
 grid: { hoverable: true, clickable: true },
-yaxis: { min: -1, max: 150 }});
+yaxis: { min: -1, max: 200 }});
 function showTooltip(x, y, contents) {
 $('<div id="tooltip">' + contents + '</div>').css( {
 position: 'absolute',
@@ -97,7 +106,7 @@ plot.highlight(item.series, item.datapoint);
 <?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
 <?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
 <?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>VMA Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>vVO2MAX Graph</a></p>"; ?>
 <?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
 <?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
 <?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>

@@ -45,13 +45,25 @@
 					fclose($fp);
 				
 					?>
+											<div id="graph_android">
+						   <ul>
+							  <li><?php echo "<a href='graph/txt_to_html_temperature.php?login=".$login." '>Temperature</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_heart.php?login=".$login." ' >Heart Rate</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_weight.php?login=".$login." '>Weight</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_vma.php?login=".$login." '>vVO2MAX</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_distance.php?login=".$login." '>Distance</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_speed.php?login=".$login." '>Speed</a>"; ?></li>
+							  <li><?php echo "<a href='graph/txt_to_html_time.php?login=".$login." '>Time</a>"; ?></li>
+						   </ul>
+						</div>
+					
 						<article>
 						<h1>Welcome in your Auto-Adaptive System</h1></br>
 						<ul>
 						<li><?php echo "<p><a href='change_data.php?login=".$login." '>Data</a> Change your data (VMA, heart rate...)</p></br>"; ?></li>
 						<li><?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenges!</p></br>"; ?></li>
 						<li><?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progresses.</p></br>"; ?></li>
-						<li><?php echo "<p><a href='new_vma.php?login=".$login." '>New VMA test</a> Make a new VMA test weekly to improve your performance.</p></br>"; ?></li>
+						<li><?php echo "<p><a href='new_vma.php?login=".$login." '>New vVO2MAX test</a> Make a new vVO2MAX test weekly to improve your performance.</p></br>"; ?></li>
 						</ul>
 						</article>
 						<aside>
@@ -59,14 +71,14 @@
 						<?php echo "<p><a href='graph/txt_to_html_temperature.php?login=".$login." '>Temperature Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_weight.php?login=".$login." '>Weight Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_heart.php?login=".$login." '>Heart Rate Graph</a></p>"; ?>
-						<?php echo "<p><a href='graph/txt_to_html_vma.php?login=".$login." '>VMA Graph</a></p>"; ?>
+						<?php echo "<p><a href='graph/txt_to_html_vma.php?login=".$login." '>vVO2MAX Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_distance.php?login=".$login." '>Distance Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_speed.php?login=".$login." '>Speed Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_time.php?login=".$login." '>Time Graph</a></p>"; ?>
 						</aside>
 					<?php
 				?>
-						<article>
+						<article id="compare">
 						<center>
 						
 						<TABLE border="1">

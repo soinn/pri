@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="../style.css" />
-<title>So Innov - Research & Innovation Project</title>
+<link href="media-queries.css" rel="stylesheet" type="text/css"><title>So Innov - Research & Innovation Project</title>
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="../excanvas.min.js"></script><![endif]-->
 <script language="javascript" type="text/javascript" src="jquery.js"></script>
 <script language="javascript" type="text/javascript" src="jquery.flot.js"></script>
@@ -21,14 +21,24 @@ Improve yourself with Auto-Adaptive System !
 <a href="#" class="bouton_rouge"></a>
 </div></div>
 <section>
-<article>
 <?php
 $login = $_GET['login'];
 ?>
-<h1>Weight Graph</h1></br>
+<div id="graph_android">
+<ul>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=admin ' class='active' >Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=admin ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=admin ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=admin '>vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=admin '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=admin '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=admin '>Time</a>"; ?></li>
+</ul></div>
+<article>
+<h1>Temperature Graph</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
-</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
-</br><p>This is time in x-axis and kilograms in y-axis.</p>
+</br><p>This the graph of your temperature, each point match with one of your training and the temperature you recorded during this training.</p>
+</br><p>This is time in x-axis and temperature in y-axis.</p>
 </br><p id="hoverdata">Mouse hovers at
 (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
 
