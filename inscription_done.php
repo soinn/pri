@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-				<link href="media-queries.css" rel="stylesheet" type="text/css">
+		<link href="media-queries.css" rel="stylesheet" type="text/css">
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -90,6 +90,7 @@
 				
 				?>
 				<p>Thanks.</p>
+				<p><a href="index.html">Return on home page.</a></p>
 				<?php
 				}
 				else

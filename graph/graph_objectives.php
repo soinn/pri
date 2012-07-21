@@ -25,7 +25,7 @@ Improve yourself with Auto-Adaptive System !
 <?php
 $login = $_GET['login'];
 ?>
-<h1>Training Plan for 21Km in 12 Weeks (Expert)</h1></br>
+<h1>Training Plan for 5Km in 8 Weeks (Rookie)</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>
 </br><p>This is days in x-axis and kilometers in y-axis.</p>
@@ -36,173 +36,117 @@ $login = $_GET['login'];
 <script type="text/javascript">
 $(function () {
 var weight = [
-[1, 4
+[1, 0
 ], 
-[2, 3
+[2, 2.5
 ], 
-[3, 0
+[3, 1
 ], 
-[4, 8
+[4, 2.5
 ], 
 [5, 0
 ], 
-[6, 1
+[6, 3.5
 ], 
-[7, 5
+[7, 2.5
 ], 
-[8, 4
+[8, 0
 ], 
-[9, 2.5
+[9, 3.5
 ], 
-[10, 4
+[10, 1
 ], 
-[11, 3
+[11, 2.5
 ], 
 [12, 0
 ], 
-[13, 15
+[13, 4
 ], 
-[14, 5
+[14, 2.5
 ], 
-[15, 4
+[15, 0
 ], 
-[16, 3
+[16, 3.5
 ], 
-[17, 4
+[17, 1
 ], 
-[18, 8
+[18, 2.5
 ], 
 [19, 0
 ], 
-[20, 16
+[20, 4
 ], 
-[21, 5
+[21, 2.5
 ], 
-[22, 4
+[22, 0
 ], 
-[23, 3
+[23, 4
 ], 
-[24, 4
+[24, 1
 ], 
-[25, 3.5
+[25, 2.5
 ], 
 [26, 0
 ], 
-[27, 13
+[27, 5
 ], 
-[28, 6
+[28, 2
 ], 
-[29, 4
+[29, 0
 ], 
-[30, 2.5
+[30, 5
 ], 
-[31, 4
+[31, 1
 ], 
-[32, 3
+[32, 2.5
 ], 
 [33, 0
 ], 
-[34, 15
+[34, 6
 ], 
-[35, 6
+[35, 2
 ], 
-[36, 4
+[36, 0
 ], 
-[37, 3
+[37, 5.75
 ], 
-[38, 4
+[38, 1
 ], 
-[39, 3
+[39, 2.5
 ], 
 [40, 0
 ], 
-[41, 17
+[41, 7
 ], 
-[42, 5
+[42, 2
 ], 
-[43, 4
+[43, 0
 ], 
-[44, 3
+[44, 5
 ], 
-[45, 4
+[45, 1
 ], 
-[46, 3
+[46, 2.5
 ], 
 [47, 0
 ], 
-[48, 20
+[48, 7
 ], 
-[49, 7
+[49, 2
 ], 
-[50, 4
+[50, 0
 ], 
-[51, 2
+[51, 5
 ], 
-[52, 4
+[52, 1
 ], 
-[53, 3
+[53, 3.5
 ], 
 [54, 0
 ], 
-[55, 18
+[55, 0
 ], 
-[56, 7
-], 
-[57, 4
-], 
-[58, 3
-], 
-[59, 4
-], 
-[60, 3.5
-], 
-[61, 0
-], 
-[62, 16
-], 
-[63, 7
-], 
-[64, 4
-], 
-[65, 3
-], 
-[66, 4
-], 
-[67, 3
-], 
-[68, 0
-], 
-[69, 22
-], 
-[70, 7
-], 
-[71, 4
-], 
-[72, 3
-], 
-[73, 0
-], 
-[74, 8
-], 
-[75, 0
-], 
-[76, 8
-], 
-[77, 5
-], 
-[78, 0
-], 
-[79, 7
-], 
-[80, 2.5
-], 
-[81, 3.5
-], 
-[82, 0
-], 
-[83, 1.5
-], 
-[84, 21.1], 
+[56, 5], 
 ];
 var weighty = [
 [1, 0], 
@@ -219,12 +163,12 @@ var jour = Math.floor(weight[i][0] / 100);
 var mois = weight[i][0] % 100;
 weight2[i][0] = mois + (jour / 30);}
 var plot = $.plot($("#placeholder"),
-[ { data: weight2, label: "21km"}, { data: weighty, label: "You" }], {
+[ { data: weight2, label: "5km"}, { data: weighty, label: "You" }], {
 series: {
 lines: { show: true },
 points: { show: true }},
 grid: { hoverable: true, clickable: true },
-yaxis: { min: -1, max: 22 }});
+yaxis: { min: -1, max: 10 }});
 function showTooltip(x, y, contents) {
 $('<div id="tooltip">' + contents + '</div>').css( {
 position: 'absolute',

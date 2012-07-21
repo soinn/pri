@@ -340,6 +340,21 @@ footer h1
     background: url('images/separateur.png') repeat-x top;
 }
 
+#article_compare
+{
+	display: none;
+}
+
+#graph_android
+{
+	display: none;
+}
+
+#login_android
+{
+	display: none;
+}
+
 
 
 
