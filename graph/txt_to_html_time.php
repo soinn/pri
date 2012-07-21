@@ -87,7 +87,7 @@ fputs($fp, "series: {\n");
 fputs($fp, "lines: { show: true },\n");
 fputs($fp, "points: { show: true }},\n");
 fputs($fp, "grid: { hoverable: true, clickable: true },\n");
-fputs($fp, "yaxis: { min: -1, max: 150 }});\n");
+fputs($fp, "yaxis: { min: -1, max: 200 }});\n");
 fputs($fp, "function showTooltip(x, y, contents) {\n");
 fputs($fp, "$('<div id=\"tooltip\">' + contents + '</div>').css( {\n");
 fputs($fp, "position: 'absolute',\n");
