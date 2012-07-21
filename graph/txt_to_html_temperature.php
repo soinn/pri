@@ -6,6 +6,43 @@
 
 unlink ("graph_temp.php");
 
+$txt = "../temp/temp.csv";
+$fd =  fopen($txt,"r");
+$val = 0;
+$temp=0;
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "NO,Temp,Time\n")
+	{
+	}
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+	$val = $val+1;
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$temp=$temp+$data[1];
+
+	}
+		
+}
+$tmoy=0;
+$tmoy=$temp/$val;
+fclose($fd);
+unlink ("../temp/temp.csv");
+
+
+
+
+
+
+
+
+
 $fp = fopen("graph_temp.php","w+");
 
 fputs($fp, "<!DOCTYPE html>\r\n<html>\r\n<head>\n");
@@ -56,6 +93,45 @@ fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"click
 fputs($fp, "\n");
 fputs($fp, "\n");
 
+
+$txt = "../user/".$login."_temp.txt";
+$octet=filesize("../user/".$login."_temp.txt");
+if ($octet==0) 
+{
+			$fd = fopen($txt, "a+");
+            fputs($fd, $tmoy.",1");
+			fputs($fd, "\n");				
+			fclose($fd);
+}
+else
+{
+$num=0;
+$fd =  fopen($txt,"a+");
+	
+	
+	
+	while(!feof($fd)) 
+	{
+		$ligne = fgets($fd,255);
+	if ($ligne =="")
+	{
+	}
+	else
+	{
+
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$num=$data[1];
+	}
+	}	
+	$num=$num+1;
+    fputs($fd, $tmoy.",".$num);
+	fputs($fd, "\n");				
+	fclose($fd);		
+}
+
+
+
 fputs($fp, "<script type=\"text/javascript\">\n");
 fputs($fp, "$(function () {\n");
 fputs($fp, "var weight = [\n");
@@ -72,18 +148,32 @@ while(!feof($fd))
 	}
 	else
 	{
-	$ligne = substr($ligne,0,strlen($ligne)-1);
+	$ligne = substr($ligne,0,strlen($ligne));
 	$data=explode(",", $ligne);
 
-	$lol = "[".$data[1].", ".$data[2]."], ";
+	$lol = " [".$data[1].", ".$data[0]."], ";
 
 	fputs($fp, $lol);
-	fputs($fp, "\n");
-	}
 		
+	fputs($fp, "\n");
+
+	
+
+	}
+
 }
 fclose($fd);
 fputs($fp, "];\n");
+
+
+
+
+
+
+
+
+
+
 
 fputs($fp, "var weight2 = weight;\n");
 fputs($fp, "var nbr_valeur = weight.length;\n");

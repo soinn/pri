@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="style.css" />
-				<link href="media-queries.css" rel="stylesheet" type="text/css">
+		<link href="media-queries.css" rel="stylesheet" type="text/css">
         <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -31,28 +31,21 @@
             
             <section>
                 <article>
-				<?php
-					$login = $_GET['login'];
-				?>
-				<?php echo "<form action='display_data_without_pass.php?login=".$login." 'method='post'>"; ?>
-					</br></br><p>Please fill this informations.</p></br>
-					<p>vVO2MAX: Maximum Aerobic Speed (km / h).</br> Movement speed of a person who consumes 100% of its maximum flow rate of O2 (VO2 max).</br> 
-					To establish your vVO2MAX without laboratory testing, take the maximum distance runed in 6 minutes, and divide it by 100.</br> 
-					We will use the Half Cooper method.</br> 
-					Example: A runner who runs 1350 meters in 6 minutes will have a vVO2MAX of 1350: 100 = 13.5 km / h</p></br>
-					<p><label>vVO2MAX (km/h)</label> : </br><input type="number" name="vma" /></p></br>	
-					<p><label>Cardiac Frequence Max (puls/min)</label> : </br><input type="number" name="fmax" /></p></br>
-					<p><label>Cardiac Frequence Normal(puls/min)</label> : </br><input type="number" name="fnormal" /></p></br>
-					<p><label>Sport level</label> : </br><input type="radio" name="level" value="beginner" id="beginner" /> <label for="beginner">Beginner</label></br>
-					<input type="radio" name="level" value="confirmed" id="confirmed" /> <label for="confirmed">Confirmed</label></br>
-					<input type="radio" name="level" value="expert" id="expert" /> <label for="expert">Expert</label></p></br>
-					<center><input type="submit" value="Confirm" /></center>
-					</br>
-				</form>
-				<center><a href="heartdown.php">Please click here if you want to connect your heart rate monitor with this site</a></center>
+				<p>Please read the following instructions to automatically publish your result from your Heart Rate Monitor on this site:</p> 
+				<p>(Only compatible if Geonaute Software is installed)</p>
 				<br>
+				<center>First, download the archive <a href="http://dl.free.fr/nchKo6S76">Cardio</a></center>
+				<p>Then unzip it in your Hard Drive Disk such as C:/cardio</p>
+				<br>
+				<center>Now download the second archive <a href="http://dl.free.fr/nchKo6S76">Cardio-Acquire</a></center>
+				<p>Then unzip it on your desktop</p>
+				<br>
+				<center>When you connect your device, just clik on the file "Cardio-Acquire" on your desktop</center>
+				<center>Your result will be automatically published on Running App'</center>
+				<br>
+				<center><a href="index.html">Return on home page.</a></center>
 				</article>
-                <aside>
+				<aside>
                     <h1>About us</h1>
                     <img src="images/bulle.png" alt="" id="fleche_bulle" />
                     <p id="photo_zozor"><img src="images/epita.png" alt="EPITA" /></p>
