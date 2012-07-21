@@ -35,7 +35,7 @@ $login = $_GET['login'];
 <li><?php echo "<a href='txt_to_html_time.php?login=admin '>Time</a>"; ?></li>
 </ul></div>
 <article>
-<h1>Training Plan for 10Km in 8 Weeks (Expert)</h1></br>
+<h1>Training Plan for 10Km in 8 Weeks (Rookie)</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>
 </br><p>This is days in x-axis and kilometers in y-axis.</p>
@@ -48,107 +48,107 @@ $(function () {
 var weight = [
 [1, 0
 ], 
-[2, 3.5
+[2, 5
 ], 
-[3, 7
+[3, 2
 ], 
-[4, 3.5
+[4, 4
 ], 
 [5, 0
 ], 
-[6, 10
+[6, 5
 ], 
 [7, 3.5
 ], 
-[8, 2
+[8, 0
 ], 
-[9, 3.5
+[9, 5
 ], 
-[10, 7
+[10, 2
 ], 
-[11, 3.5
+[11, 5
 ], 
 [12, 0
 ], 
-[13, 11
+[13, 6
 ], 
-[14, 3.5
+[14, 2
 ], 
 [15, 0
 ], 
-[16, 2.5
+[16, 6
 ], 
-[17, 8
+[17, 2
 ], 
-[18, 2.5
+[18, 6
 ], 
 [19, 0
 ], 
-[20, 12
+[20, 7
 ], 
-[21, 3.5
+[21, 2
 ], 
-[22, 2
+[22, 0
 ], 
-[23, 4.5
+[23, 7
 ], 
-[24, 8
+[24, 2
 ], 
-[25, 3.5
+[25, 6
 ], 
 [26, 0
 ], 
-[27, 14
+[27, 8
 ], 
-[28, 3.5
+[28, 2.5
 ], 
 [29, 0
 ], 
-[30, 3.5
+[30, 7
 ], 
-[31, 8
+[31, 2
 ], 
-[32, 2
+[32, 5
 ], 
 [33, 0
 ], 
-[34, 10
+[34, 9
 ], 
-[35, 3.5
+[35, 2
 ], 
-[36, 2
+[36, 0
 ], 
-[37, 4.5
+[37, 7
 ], 
-[38, 8
+[38, 2
 ], 
-[39, 3.5
+[39, 6
 ], 
 [40, 0
 ], 
-[41, 12
+[41, 10
 ], 
-[42, 3.5
+[42, 2.5
 ], 
 [43, 0
 ], 
-[44, 2.5
+[44, 7
 ], 
-[45, 7
+[45, 2
 ], 
-[46, 3.5
+[46, 5
 ], 
 [47, 0
 ], 
-[48, 12
+[48, 11
 ], 
-[49, 3.5
+[49, 2.5
 ], 
-[50, 2
+[50, 0
 ], 
-[51, 8
+[51, 5
 ], 
-[52, 3.5
+[52, 2
 ], 
 [53, 5
 ], 
@@ -160,6 +160,7 @@ var weight = [
 ];
 var weighty = [
 [1, 0], 
+[2, 42], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -174,7 +175,7 @@ series: {
 lines: { show: true },
 points: { show: true }},
 grid: { hoverable: true, clickable: true },
-yaxis: { min: -1, max: 15 }});
+yaxis: { min: -1, max: 12 }});
 function showTooltip(x, y, contents) {
 $('<div id="tooltip">' + contents + '</div>').css( {
 position: 'absolute',

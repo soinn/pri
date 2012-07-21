@@ -74,6 +74,7 @@
 						<li><?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenges!</p></br>"; ?></li>
 						<li><?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progresses.</p></br>"; ?></li>
 						<li><?php echo "<p><a href='new_vma.php?login=".$login." '>New vVO2MAX test</a> Make a new vVO2MAX test weekly to improve your performance.</p></br>"; ?></li>
+						<li><?php echo "<p><a href='display_cardio.php?login=".$login." '>Cardio Trainings</a> Display all the heart rate graphs of your last trainings.</p></br>"; ?></li>
 						<div  id="article_compare"><li><?php echo "<p><a href='compare.php?login=".$login." '>Compare Performances</a> Compare your performances with training.</p></br>"; ?></li></div>
 						</ul>
 						</article>

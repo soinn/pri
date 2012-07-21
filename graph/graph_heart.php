@@ -47,6 +47,7 @@ $login = $_GET['login'];
 $(function () {
 var weight = [
 [0, 100], 
+[1, 22], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
