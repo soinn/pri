@@ -16,33 +16,9 @@
     <!--[if IE 9 ]><body class="ie9"><![endif]-->
     <!--[if !IE]><!--><body><!--<![endif]-->
         <div id="bloc_page">
-		        <?php
-				if (isset($_POST['mot_de_passe']))
-				{
-					$login = $_POST['login'];
-					$password = $_POST['mot_de_passe']."\n";
-					$filename = "user/".$login.".txt";
-					$login = $login."\n";
-					
-					if (is_file($filename) == 1)
-					{
-						$fp = fopen($filename, "r");
-						$ligne1 = fgets($fp, 42);
-						$ligne2 = fgets($fp, 42);
-						fclose($fp);
-					}
-					else
-					{
-						$ligne1 = ".";
-						$ligne2 = ".";
-					}
-					
-					if ($ligne1 == $login AND $ligne2 == $password)
-					{
-					?>
             <header>
                 <div id="titre_principal">
-					<?php $login = $_POST['login']; 
+					<?php $login = $_GET['login'];
 					echo "<h1><li><a href='display_data2.php?login=".$login." '>Running App'</a></li></h1>"; ?>
                 </div>
             </header>
@@ -55,6 +31,7 @@
             </div>
             
             <section>
+						
 						<div id="graph_android">
 						   <ul>
 							  <li><?php echo "<a href='graph/txt_to_html_temperature.php?login=".$login." '>Temperature</a>"; ?></li>
@@ -151,48 +128,6 @@
 						</TABLE>
 						</center>
 						</article>
-						<?php
-					}
-					else
-					{
-						echo '<header>';
-						echo '<div id="titre_principal">';
-						$login = $_POST['login'];
-						echo '<h1><li><a href="index.html">Running App</a></li></h1>';
-						echo '</div>';
-						echo '</header>';
-						echo '<div id="banniere_image">';
-						echo '<div id="banniere_description">';
-						echo 'Improve yourself with Auto-Adaptive System !';
-						echo '<a href="#" class="bouton_rouge"></a>';
-						echo '</div>';
-						echo '</div>';
-						echo '<section>';								
-						echo '<p>Incorrect password.</p>';
-					}
-				}
-				else
-				{
-						echo '<header>';
-						echo '<div id="titre_principal">';
-						$login = $_POST['login'];
-						echo '<h1><li><a href="index.html">Running App</a></li></h1>';
-						echo '</div>';
-						echo '</header>';
-						echo '<div id="banniere_image">';
-						echo '<div id="banniere_description">';
-						echo 'Improve yourself with Auto-Adaptive System !';
-						echo '<a href="#" class="bouton_rouge"></a>';
-						echo '</div>';
-						echo '</div>';
-						echo '<section>';								
-						echo '<p>Incorrect password.</p>';
-				}
-				?>
-	
-
-
-				
             </section>
             
             <footer>

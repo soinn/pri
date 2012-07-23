@@ -12,7 +12,8 @@
 <div id="bloc_page">
 <header>
 <div id="titre_principal">
-<h1><li><a href="../index.html">Running App'</a></li></h1>
+<?php $login = $_GET['login'];
+echo "<h1><li><a href='../display_data2.php?login=$login '>Running App'</a></li></h1>"; ?>
 </div>
 </header>
 <div id="banniere_image">
@@ -26,185 +27,225 @@ $login = $_GET['login'];
 ?>
 <div id="graph_android">
 <ul>
-<li><?php echo "<a href='txt_to_html_temperature.php?login=ghj '>Temperature</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_heart.php?login=ghj ' >Heart Rate</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_weight.php?login=ghj ' >Weight</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_vma.php?login=ghj '>vVO2MAX</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_distance.php?login=ghj '>Distance</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_speed.php?login=ghj '>Speed</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_time.php?login=ghj '>Time</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=admin '>Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=admin ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=admin ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=admin '>vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=admin '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=admin '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=admin '>Time</a>"; ?></li>
 </ul></div>
 <article>
-<h1>Training Plan for 10Km in 8 Weeks (Rookie)</h1></br>
+<h1>Training Plan for Marathon in 14 Weeks (Rookie)</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>
 </br><p>This is days in x-axis and kilometers in y-axis.</p>
-<br><center><font color="green">Very Good Training</font></center> </br><p id="hoverdata">Mouse hovers at
+<br><center><font color="red">Too much training, consider to improve your level</font></center> </br><p id="hoverdata">Mouse hovers at
 (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
 
 
 <script type="text/javascript">
 $(function () {
 var weight = [
-[1, 0
+[1, 4
 ], 
-[2, 5
+[2, 2
 ], 
-[3, 2
+[3, 13
 ], 
-[4, 4
-], 
-[5, 0
-], 
-[6, 5
-], 
-[7, 3.5
-], 
-[8, 0
-], 
-[9, 5
-], 
-[10, 2
-], 
-[11, 5
-], 
-[12, 0
-], 
-[13, 6
-], 
-[14, 2
-], 
-[15, 0
-], 
-[16, 6
-], 
-[17, 2
-], 
-[18, 6
-], 
-[19, 0
-], 
-[20, 7
-], 
-[21, 2
-], 
-[22, 0
-], 
-[23, 7
-], 
-[24, 2
-], 
-[25, 6
-], 
-[26, 0
-], 
-[27, 8
-], 
-[28, 2.5
-], 
-[29, 0
-], 
-[30, 7
-], 
-[31, 2
-], 
-[32, 5
-], 
-[33, 0
-], 
-[34, 9
-], 
-[35, 2
-], 
-[36, 0
-], 
-[37, 7
-], 
-[38, 2
-], 
-[39, 6
-], 
-[40, 0
-], 
-[41, 10
-], 
-[42, 2.5
-], 
-[43, 0
-], 
-[44, 7
-], 
-[45, 2
-], 
-[46, 5
-], 
-[47, 0
-], 
-[48, 11
-], 
-[49, 2.5
-], 
-[50, 0
-], 
-[51, 5
-], 
-[52, 2
-], 
-[53, 5
-], 
-[54, 0
-], 
-[55, 0
-], 
-[56, 10], 
-];
-var weighty = [
-[1, 0
-], 
-[2, 2.5
-], 
-[3, 7
-], 
-[4, 2.5
+[4, 3.5
 ], 
 [5, 0
 ], 
-[6, 8
+[6, 19
 ], 
-[7, 2.5
+[7, 5
 ], 
-[8, 1
+[8, 4
 ], 
 [9, 2.5
 ], 
-[10, 7
+[10, 13
 ], 
-[11, 2.5
+[11, 3.5
 ], 
 [12, 0
 ], 
-[13, 8
+[13, 22
 ], 
-[14, 2.5
+[14, 7
 ], 
-[15, 0
+[15, 4
 ], 
-[16, 2
+[16, 3
 ], 
-[17, 8
+[17, 14
 ], 
-[18, 2.5
+[18, 8
 ], 
 [19, 0
 ], 
-[20, 10
+[20, 26
 ], 
-[21, 2
+[21, 7
 ], 
-[22, 1
+[22, 4
 ], 
-[23, 2.5
+[23, 3.5
 ], 
+[24, 14
+], 
+[25, 3.5
+], 
+[26, 0
+], 
+[27, 19
+], 
+[28, 9
+], 
+[29, 4
+], 
+[30, 2
+], 
+[31, 13
+], 
+[32, 10
+], 
+[33, 0
+], 
+[34, 29
+], 
+[35, 6
+], 
+[36, 4
+], 
+[37, 2
+], 
+[38, 14
+], 
+[39, 3.5
+], 
+[40, 0
+], 
+[41, 22
+], 
+[42, 9
+], 
+[43, 4
+], 
+[44, 2.5
+], 
+[45, 15
+], 
+[46, 12
+], 
+[47, 0
+], 
+[48, 26
+], 
+[49, 9
+], 
+[50, 4
+], 
+[51, 3
+], 
+[52, 14
+], 
+[53, 3.5
+], 
+[54, 0
+], 
+[55, 19
+], 
+[56, 8
+], 
+[57, 4
+], 
+[58, 3
+], 
+[59, 14
+], 
+[60, 8
+], 
+[61, 0
+], 
+[62, 32
+], 
+[63, 5
+], 
+[64, 4
+], 
+[65, 10
+], 
+[66, 14
+], 
+[67, 4
+], 
+[68, 0
+], 
+[69, 19
+], 
+[70, 9
+], 
+[71, 4
+], 
+[72, 8
+], 
+[73, 14
+], 
+[74, 3.5
+], 
+[75, 0
+], 
+[76, 34
+], 
+[77, 5
+], 
+[78, 4
+], 
+[79, 8
+], 
+[80, 9
+], 
+[81, 3.5
+], 
+[82, 0
+], 
+[83, 19
+], 
+[84, 6
+], 
+[85, 4
+], 
+[86, 8
+], 
+[87, 8
+], 
+[88, 7
+], 
+[89, 0
+], 
+[90, 10
+], 
+[91, 6
+], 
+[92, 4
+], 
+[93, 8
+], 
+[94, 0
+], 
+[95, 7
+], 
+[96, 0
+], 
+[97, 5
+], 
+[98, 42.2], 
+];
+var weighty = [
+[1, 0], 
+[2, 42], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -214,12 +255,12 @@ var jour = Math.floor(weight[i][0] / 100);
 var mois = weight[i][0] % 100;
 weight2[i][0] = mois + (jour / 30);}
 var plot = $.plot($("#placeholder"),
-[ { data: weight2, label: "10km"}, { data: weighty, label: "You" }], {
+[ { data: weight2, label: "42km"}, { data: weighty, label: "You" }], {
 series: {
 lines: { show: true },
 points: { show: true }},
 grid: { hoverable: true, clickable: true },
-yaxis: { min: -1, max: 12 }});
+yaxis: { min: -1, max: 43 }});
 function showTooltip(x, y, contents) {
 $('<div id="tooltip">' + contents + '</div>').css( {
 position: 'absolute',
@@ -261,13 +302,13 @@ plot.highlight(item.series, item.datapoint);
 </article>
 <aside>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=ghj '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=ghj '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=ghj '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=ghj '>vVO2MAX Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=ghj '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=ghj '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=ghj '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>vVO2MAX Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>

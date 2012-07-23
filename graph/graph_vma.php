@@ -12,7 +12,7 @@
 <div id="bloc_page">
 <header>
 <div id="titre_principal">
-<h1><li><a href="../index.html">Running App'</a></li></h1>
+echo "<h1><li><a href='../display_data2.php?login=$login '>Running App'</a></li></h1>"; ?>
 </div>
 </header>
 <div id="banniere_image">
@@ -26,13 +26,13 @@ $login = $_GET['login'];
 ?>
 <div id="graph_android">
 <ul>
-<li><?php echo "<a href='txt_to_html_temperature.php?login=ghj '>Temperature</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_heart.php?login=ghj ' >Heart Rate</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_weight.php?login=ghj ' >Weight</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_vma.php?login=ghj ' class='active' >vVO2MAX</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_distance.php?login=ghj '>Distance</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_speed.php?login=ghj '>Speed</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_time.php?login=ghj '>Time</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=admin '>Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=admin ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=admin ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=admin ' class='active' >vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=admin '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=admin '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=admin '>Time</a>"; ?></li>
 </ul></div>
 <article>
 <h1>vVO2max Graph</h1></br>
@@ -47,6 +47,7 @@ $login = $_GET['login'];
 $(function () {
 var weight = [
 [0, 100], 
+[, 424242], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -103,13 +104,13 @@ plot.highlight(item.series, item.datapoint);
 </article>
 <aside>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=ghj '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=ghj '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=ghj '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=ghj '>vVO2MAX Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=ghj '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=ghj '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=ghj '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>vVO2MAX Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>

@@ -18,7 +18,8 @@
         <div id="bloc_page">
             <header>
                 <div id="titre_principal">
-                    <h1><li><a href="index.html">Running App'</a></li></h1>
+					<?php $login = $_GET['login'];
+					echo "<h1><li><a href='display_data2.php?login=".$login." '>Running App'</a></li></h1>"; ?>
                 </div>
             </header>
             

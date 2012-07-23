@@ -1,7 +1,7 @@
 <html>
 <?php $login = $_GET['login']; ?>
 <?php echo "<META http-equiv='refresh' content='2;URL=graph_objectives.php?login=".$login."'>";?>
-<p>Génération du graphe</p>
+<p>Graph Generation...</p>
 <?php 
 
 unlink ("graph_objectives.php");
@@ -22,7 +22,8 @@ fputs($fp, "<body>\n");
 fputs($fp, "<div id=\"bloc_page\">\n");
 fputs($fp, "<header>\n");
 fputs($fp, "<div id=\"titre_principal\">\n");
-fputs($fp, "<h1><li><a href=\"../index.html\">Running App'</a></li></h1>\n");
+fputs($fp, "<?php \$login = \$_GET['login'];\n");
+fputs($fp, "echo \"<h1><li><a href='../display_data2.php?login=\$login '>Running App'</a></li></h1>\"; ?>\n");
 fputs($fp, "</div>\n");
 fputs($fp, "</header>\n");
 fputs($fp, "<div id=\"banniere_image\">\n");
@@ -244,6 +245,7 @@ fputs($fp, "</script>\n");
 
 fputs($fp, "</article>\n");
 fputs($fp, "<aside>\n");
+fputs($fp, "<p><a href='../index.html'><b>Log out</b></a></p>\n");
 fputs($fp, "<h1><center>Graphs & other data</center></h1>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_temperature.php?login=$login '>Temperature Graph</a></p>\"; ?>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_weight.php?login=$login '>Weight Graph</a></p>\"; ?>\n");

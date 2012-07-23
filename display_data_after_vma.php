@@ -18,7 +18,8 @@
         <div id="bloc_page">
             <header>
                 <div id="titre_principal">
-                    <h1><li><a href="index.html">Running App'</a></li></h1>
+					<?php $login = $_GET['login'];
+					echo "<h1><li><a href='display_data2.php?login=".$login." '>Running App'</a></li></h1>"; ?>
                 </div>
             </header>
             
@@ -58,15 +59,16 @@
 						</div>
 					
 						<article>
-						<h1>Welcome in your Auto-Adaptive System</h1></br>
+						<h1>Welcome to your Auto-Adaptive System</h1></br>
 						<ul>
 						<li><?php echo "<p><a href='change_data.php?login=".$login." '>Data</a> Change your data (VMA, heart rate...)</p></br>"; ?></li>
-						<li><?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectifs</a> Change your objectifs! Get ready for your next challenges!</p></br>"; ?></li>
+						<li><?php echo "<p><a href='change_objectif.php?login=".$login." '>Objectives</a> Change your objectifs! Get ready for your next challenges!</p></br>"; ?></li>
 						<li><?php echo "<p><a href='new_training.php?login=".$login." '>New training</a> Every time you run, fill this section and go to the graph section check your progresses.</p></br>"; ?></li>
 						<li><?php echo "<p><a href='new_vma.php?login=".$login." '>New vVO2MAX test</a> Make a new vVO2MAX test weekly to improve your performance.</p></br>"; ?></li>
 						</ul>
 						</article>
 						<aside>
+						<p><a href='index.html'><b>Log out</b></a></p>
 						<h1><center>Graphs & other data</center></h1>
 						<?php echo "<p><a href='graph/txt_to_html_temperature.php?login=".$login." '>Temperature Graph</a></p>"; ?>
 						<?php echo "<p><a href='graph/txt_to_html_weight.php?login=".$login." '>Weight Graph</a></p>"; ?>

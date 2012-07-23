@@ -38,6 +38,10 @@
 					
 					<p><label>Sexe</label> : </br><input type="radio" name="sexe" value="male" id="male" /> <label for="male">Male</label>
 					<input type="radio" name="sexe" value="female" id="female" /> <label for="female">Female</label></p>
+					
+
+
+					
 					<p><label>Date of birth (mm/dd/yyyy)</label> : </br><input type="text" name="age" /></p>
 					<p><label>Weight (kg)</label> : </br><input type="number" name="weight" /></p>
 					<p><label>Size (cm)</label> : </br><input type="number" name="size" /></p>
