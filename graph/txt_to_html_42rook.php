@@ -51,6 +51,72 @@ fputs($fp, "<h1>Training Plan for Marathon in 14 Weeks (Rookie)</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
 fputs($fp, "</br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>\n");
 fputs($fp, "</br><p>This is days in x-axis and kilometers in y-axis.</p>\n");
+
+$txt1 = "../user/".$login."_distance.txt";
+$txt2 = "../objectives/42deb.txt";
+$fd =  fopen($txt1,"r");
+$fd1 = fopen($txt2,"r");
+$valobj = 0;
+$comp = 0;
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	$ligne2 = fgets($fd1,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data1=explode(",", $ligne);
+	
+	$ligne2 = substr($ligne2,0,strlen($ligne2));
+	$data2=explode(",", $ligne2);
+	$comp = $comp+1;
+	$valobj = $valobj+$data1[1] - $data2[1];
+	
+	}
+
+}
+
+$total = 0;
+$total = $valobj/$comp;
+
+
+fclose($fd);
+fclose($fd1);
+
+
+if ($total < 0.42 AND $total > -0.42)
+{
+fputs($fp, "<br>");
+fputs($fp, "<center><font color=\"green\">Very Good Training</font></center> ");
+}
+if ($total < 0.84 AND $total > 0.42)
+{
+fputs($fp, "<br>");
+fputs($fp, "<center><font color=\"yellow\">Be aware of overtaining, think of your health </font></center> ");
+}
+if ($total > 0.84)
+{
+fputs($fp, "<br>");
+fputs($fp, "<center><font color=\"red\">Too much training, consider to improve your level</font></center> ");
+}
+if ($total > -0.84 AND $total < -0.42)
+{
+fputs($fp, "<br>");
+fputs($fp, "<center><font color=\"yellow\">A little effort and you'll be right in the good range</font></center> ");
+}
+if ($total < -0.84)
+{
+fputs($fp, "<br>");
+fputs($fp, "<center><font color=\"red\">Think of your objective! Move more!</font></center> ");
+}
+
+
+
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
 fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"clickdata\"></span></p>\n");
 fputs($fp, "\n");

@@ -26,20 +26,20 @@ $login = $_GET['login'];
 ?>
 <div id="graph_android">
 <ul>
-<li><?php echo "<a href='txt_to_html_temperature.php?login=admin '>Temperature</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_heart.php?login=admin ' >Heart Rate</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_weight.php?login=admin ' >Weight</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_vma.php?login=admin '>vVO2MAX</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_distance.php?login=admin '>Distance</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_speed.php?login=admin '>Speed</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_time.php?login=admin '>Time</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=ghj '>Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=ghj ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=ghj ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=ghj '>vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=ghj '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=ghj '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=ghj '>Time</a>"; ?></li>
 </ul></div>
 <article>
 <h1>Training Plan for 10Km in 8 Weeks (Rookie)</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
 </br><p>This the graph of your distance, each point match with one of your training and the distance you recorded during this training.</p>
 </br><p>This is days in x-axis and kilometers in y-axis.</p>
-</br><p id="hoverdata">Mouse hovers at
+<br><center><font color="green">Very Good Training</font></center> </br><p id="hoverdata">Mouse hovers at
 (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
 
 
@@ -159,8 +159,52 @@ var weight = [
 [56, 10], 
 ];
 var weighty = [
-[1, 0], 
-[2, 42], 
+[1, 0
+], 
+[2, 2.5
+], 
+[3, 7
+], 
+[4, 2.5
+], 
+[5, 0
+], 
+[6, 8
+], 
+[7, 2.5
+], 
+[8, 1
+], 
+[9, 2.5
+], 
+[10, 7
+], 
+[11, 2.5
+], 
+[12, 0
+], 
+[13, 8
+], 
+[14, 2.5
+], 
+[15, 0
+], 
+[16, 2
+], 
+[17, 8
+], 
+[18, 2.5
+], 
+[19, 0
+], 
+[20, 10
+], 
+[21, 2
+], 
+[22, 1
+], 
+[23, 2.5
+], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -217,13 +261,13 @@ plot.highlight(item.series, item.datapoint);
 </article>
 <aside>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=admin '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=admin '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=admin '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=admin '>vVO2MAX Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=admin '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=admin '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=admin '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=ghj '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=ghj '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=ghj '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=ghj '>vVO2MAX Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=ghj '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=ghj '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=ghj '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>
