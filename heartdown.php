@@ -35,13 +35,13 @@
 				<p>Please read the following instructions to automatically publish your result from your Heart Rate Monitor on this site:</p> 
 				<p>(Only compatible if Geonaute Software is installed)</p>
 				<br>
-				<center>First, download the archive <a href="http://dl.free.fr/nchKo6S76">Cardio</a></center>
+				<center>First, download the archive <a href="http://dl.free.fr/r74iQZjqw">cardio</a></center>
 				<p>Then unzip it in your Hard Drive Disk such as C:/cardio</p>
 				<br>
-				<center>Now download the second archive <a href="http://dl.free.fr/nchKo6S76">Cardio-Acquire</a></center>
+				<center>Now download the second archive <a href="http://dl.free.fr/fcwIdslkp">Desktop</a></center>
 				<p>Then unzip it on your desktop</p>
 				<br>
-				<center>When you connect your device, just clik on the file "Cardio-Acquire" on your desktop</center>
+				<center>When you connect your device, just clik on the file "Cardio-Acquire" or "Tempo-Acquire"on your desktop</center>
 				<center>Your result will be automatically published on Running App'</center>
 				<br>
 				<center><a href="index.html">Return on home page.</a></center>
