@@ -6,6 +6,88 @@
 
 unlink ("graph_weight.php");
 
+
+$val =0;
+$txt = "../user/".$login."_weight.txt";
+$fd =  fopen($txt,"r");
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+$val = $val+1;
+	}
+
+}
+fclose($fd);
+
+
+$comp =0;
+$avd = 0;
+$txt = "../user/".$login."_weight.txt";
+$fd =  fopen($txt,"r");
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+	$comp = $comp+1;
+	if ($comp == $val);
+	{	
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$avd = $data[1];
+	
+	}
+	
+
+	}
+
+}
+fclose($fd);
+
+$comp1 =0;
+$drn = 0;
+$txt = "../user/".$login."_weight.txt";
+$fd =  fopen($txt,"r");
+$nuum = 0;
+$nuum = $val - 1;
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+		if ($ligne == "")
+	{
+	}
+	else
+	{
+ $comp1 =$comp1+1;
+	if ($comp1 == $nuum)
+	{	
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$drn = $data[1];
+
+	}
+	}
+	
+
+}
+fclose($fd);
+
+
+
+
 $fp = fopen("graph_weight.php","w+");
 
 fputs($fp, "<!DOCTYPE html>\r\n<html>\r\n<head>\n");
@@ -52,6 +134,19 @@ fputs($fp, "<h1>Weight Graph</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
 fputs($fp, "</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>\n");
 fputs($fp, "</br><p>This is time in x-axis and kilograms in y-axis.</p>\n");
+
+$diff = 0;
+$diff = $avd-$drn;
+if ($diff < -2 OR $diff > 2)
+{
+fputs($fp, "<center><font color = \"red\">Dangerous evolution of your weight.</font></center>");
+}
+else
+{
+fputs($fp, "<center><font color = \"Green\">Your weight stay at a good range</font></center>");
+}
+
+
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
 fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"clickdata\"></span></p>\n");
 fputs($fp, "\n");

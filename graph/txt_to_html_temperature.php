@@ -35,7 +35,120 @@ $tmoy=$temp/$val;
 fclose($fd);
 unlink ("../temp/temp.csv");
 
+$txt = "../user/".$login."_temp.txt";
+$octet=filesize("../user/".$login."_temp.txt");
+if ($octet==0) 
+{
+			$fd = fopen($txt, "a+");
+            fputs($fd, $tmoy.",1");
+			fputs($fd, "\n");				
+			fclose($fd);
+}
+else
+{
+$num=0;
+$fd =  fopen($txt,"a+");
+	
+	
+	
+	while(!feof($fd)) 
+	{
+		$ligne = fgets($fd,255);
+	if ($ligne =="")
+	{
+	}
+	else
+	{
 
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$num=$data[1];
+	}
+	}	
+	$num=$num+1;
+    fputs($fd, $tmoy.",".$num);
+	fputs($fd, "\n");				
+	fclose($fd);		
+}
+
+
+$val =0;
+$txt = "../user/".$login."_temp.txt";
+$fd =  fopen($txt,"r");
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+$val = $val+1;
+	}
+
+}
+fclose($fd);
+
+
+$comp =0;
+$avd = 0;
+$txt = "../user/".$login."_temp.txt";
+$fd =  fopen($txt,"r");
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+	
+	if ($ligne == "")
+	{
+	}
+	else
+	{
+	$comp = $comp+1;
+	if ($comp == $val);
+	{	
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$avd = $data[0];
+	
+	}
+	
+
+	}
+
+}
+fclose($fd);
+
+$comp1 =0;
+$drn = 0;
+$txt = "../user/".$login."_temp.txt";
+$fd =  fopen($txt,"r");
+$nuum = 0;
+$nuum = $val - 1;
+
+while(!feof($fd)) 
+{
+	$ligne = fgets($fd,255);
+		if ($ligne == "")
+	{
+	}
+	else
+	{
+ $comp1 =$comp1+1;
+	if ($comp1 == $nuum)
+	{	
+	$ligne = substr($ligne,0,strlen($ligne));
+	$data=explode(",", $ligne);
+	$drn = $data[0];
+
+	}
+	}
+	
+
+}
+fclose($fd);
 
 
 
@@ -89,47 +202,36 @@ fputs($fp, "<h1>Temperature Graph</h1></br>\n");
 fputs($fp, "<center><div id=\"placeholder\" style=\"width:600px;height:300px\"></div></center>\n");
 fputs($fp, "</br><p>This the graph of your temperature, each point match with one of your training and the temperature you recorded during this training.</p>\n");
 fputs($fp, "</br><p>This is time in x-axis and temperature in y-axis.</p>\n");
+
+
+$diff = 0;
+$diff = $avd-$drn;
+if ($diff < -2 OR $diff > 2)
+{
+fputs($fp, "<center><font color = \"red\">Dangerous evolution of your temperature</font></center>");
+}
+else
+{
+fputs($fp, "<center><font color = \"Green\">Your temperature stay at a good range</font></center>");
+}
+
+
+
+
 fputs($fp, "</br><p id=\"hoverdata\">Mouse hovers at\n");
 fputs($fp, "(<span id=\"x\">0</span>, <span id=\"y\">0</span>). <span id=\"clickdata\"></span></p>\n");
 fputs($fp, "\n");
 fputs($fp, "\n");
 
 
-$txt = "../user/".$login."_temp.txt";
-$octet=filesize("../user/".$login."_temp.txt");
-if ($octet==0) 
-{
-			$fd = fopen($txt, "a+");
-            fputs($fd, $tmoy.",1");
-			fputs($fd, "\n");				
-			fclose($fd);
-}
-else
-{
-$num=0;
-$fd =  fopen($txt,"a+");
-	
-	
-	
-	while(!feof($fd)) 
-	{
-		$ligne = fgets($fd,255);
-	if ($ligne =="")
-	{
-	}
-	else
-	{
 
-	$ligne = substr($ligne,0,strlen($ligne));
-	$data=explode(",", $ligne);
-	$num=$data[1];
-	}
-	}	
-	$num=$num+1;
-    fputs($fd, $tmoy.",".$num);
-	fputs($fd, "\n");				
-	fclose($fd);		
-}
+
+
+
+
+
+
+
 
 
 
@@ -234,6 +336,10 @@ fputs($fp, "</script>\n");
 
 fputs($fp, "</article>\n");
 fputs($fp, "<aside>\n");
+
+
+
+
 fputs($fp, "<p><a href='../index.html'><b>Log out</b></a></p>\n");
 fputs($fp, "<h1><center>Graphs & other data</center></h1>\n");
 fputs($fp, "<?php echo \"<p><a href='txt_to_html_temperature.php?login=$login '>Temperature Graph</a></p>\"; ?>\n");

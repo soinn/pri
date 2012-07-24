@@ -27,28 +27,42 @@ $login = $_GET['login'];
 ?>
 <div id="graph_android">
 <ul>
-<li><?php echo "<a href='txt_to_html_temperature.php?login=zxc '>Temperature</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_heart.php?login=zxc ' >Heart Rate</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_weight.php?login=zxc ' class='active'>Weight</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_vma.php?login=zxc '>vVO2MAX</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_distance.php?login=zxc '>Distance</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_speed.php?login=zxc '>Speed</a>"; ?></li>
-<li><?php echo "<a href='txt_to_html_time.php?login=zxc '>Time</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_temperature.php?login=vbn ' class='active' >Temperature</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_heart.php?login=vbn ' >Heart Rate</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_weight.php?login=vbn ' >Weight</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_vma.php?login=vbn '>vVO2MAX</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_distance.php?login=vbn '>Distance</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_speed.php?login=vbn '>Speed</a>"; ?></li>
+<li><?php echo "<a href='txt_to_html_time.php?login=vbn '>Time</a>"; ?></li>
 </ul></div>
 <article>
-<h1>Weight Graph</h1></br>
+<h1>Temperature Graph</h1></br>
 <center><div id="placeholder" style="width:600px;height:300px"></div></center>
-</br><p>This the graph of your weight, each point match with one of your training and the weight you recorded during this training.</p>
-</br><p>This is time in x-axis and kilograms in y-axis.</p>
-<center><font color = "red">Dangerous evolution of your weight.</font></center>-31</br><p id="hoverdata">Mouse hovers at
+</br><p>This the graph of your temperature, each point match with one of your training and the temperature you recorded during this training.</p>
+</br><p>This is time in x-axis and temperature in y-axis.</p>
+<center><font color = "Green">Your temperature stay at a good range</font></center></br><p id="hoverdata">Mouse hovers at
 (<span id="x">0</span>, <span id="y">0</span>). <span id="clickdata"></span></p>
 
 
 <script type="text/javascript">
 $(function () {
 var weight = [
-[0, 76.7], 
-[1, 45.7], 
+ [1
+, 34], 
+ [2
+, 31.708604651163], 
+ [3
+, 31.708604651163], 
+ [4
+, 31.708604651163], 
+ [5
+, 31.708604651163], 
+ [6
+, 31.708604651163], 
+ [7
+, 31.708604651163], 
+ [8
+, 31.708604651163], 
 ];
 var weight2 = weight;
 var nbr_valeur = weight.length;
@@ -58,12 +72,12 @@ var jour = Math.floor(weight[i][0] / 100);
 var mois = weight[i][0] % 100;
 weight2[i][0] = mois + (jour / 30);}
 var plot = $.plot($("#placeholder"),
-[ { data: weight2, label: "weight"}], {
+[ { data: weight2, label: "temperature"}], {
 series: {
 lines: { show: true },
 points: { show: true }},
 grid: { hoverable: true, clickable: true },
-yaxis: { min: -1, max: 120 }});
+yaxis: { min: -1, max: 42 }});
 function showTooltip(x, y, contents) {
 $('<div id="tooltip">' + contents + '</div>').css( {
 position: 'absolute',
@@ -106,13 +120,13 @@ plot.highlight(item.series, item.datapoint);
 <aside>
 <p><a href='../index.html'><b>Log out</b></a></p>
 <h1><center>Graphs & other data</center></h1>
-<?php echo "<p><a href='txt_to_html_temperature.php?login=zxc '>Temperature Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_weight.php?login=zxc '>Weight Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_heart.php?login=zxc '>Heart Rate Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_vma.php?login=zxc '>vVO2MAX Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_distance.php?login=zxc '>Distance Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_speed.php?login=zxc '>Speed Graph</a></p>"; ?>
-<?php echo "<p><a href='txt_to_html_time.php?login=zxc '>Time Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_temperature.php?login=vbn '>Temperature Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_weight.php?login=vbn '>Weight Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_heart.php?login=vbn '>Heart Rate Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_vma.php?login=vbn '>vVO2MAX Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_distance.php?login=vbn '>Distance Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_speed.php?login=vbn '>Speed Graph</a></p>"; ?>
+<?php echo "<p><a href='txt_to_html_time.php?login=vbn '>Time Graph</a></p>"; ?>
 </aside>
 </section>
 <footer><center>
